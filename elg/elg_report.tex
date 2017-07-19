@@ -1,0 +1,56 @@
+%PREAMBLE____________________________________________________________
+\documentclass[a4paper,10pt,twocolumn,twoside]{article}
+
+%Math and symbol packages
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+%Graphics
+\usepackage{graphicx}
+\usepackage{grffile} %Allows the graphics files to have spaces in their addresses
+\usepackage{caption}
+\usepackage{subcaption}
+
+%Fonts
+\usepackage{fontspec}% Allows choosing font from the local font library
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%\usepackage{titlesec} for customizing section headers
+
+%Page setup
+\usepackage[left = 0.5in, right = 0.5in, top = 0.8in, bottom =1in]{geometry}
+\usepackage[colorlinks=true, linkcolor = blue, citecolor = blue]{hyperref}%Coloured hyperlinks
+\setlength{\columnsep}{0.3in} %column separation
+
+%Commands of my own for convenience
+\newcommand{\mathematica}{\emph{Mathematica\textsuperscript{TM}}}
+%Change this Directory to the current directory of images to compile
+\newcommand{\figdirec}{figures}
+%____________________________________________________________________
+
+%DOCUMENT_________________________________________________________
+%Spellcheck
+%!TeX spellcheck = en-GB
+\begin{document}
+\title{MgII in emission line galaxies' circumgalactic medium}
+\author{H. S. Sunil Simha \\Physics Undergradute, IIT Madras\\ \emph{Guided by }Dr. Jason X. Prochaska, UC Santa cruz}
+\date{May-July 2017}
+\twocolumn[
+  \begin{@twocolumnfalse}
+    \maketitle
+    \begin{abstract}
+    	<Insert abstract here>\\ \hrule
+    \end{abstract}
+  \end{@twocolumnfalse}]
+\section{Introduction}
+	<Insert introduction>
+\section{Target selection}
+  <Need to ask G.B. Zhu about this?>
+\section{Data reduction}
+  <Stuff in PYPIT>
+\section{Redshift measurement}
+  <Explain redrock's working, rebinning>
+\section{Equivalent width measurement}
+  <Nothing here yet>
+\end{document}
