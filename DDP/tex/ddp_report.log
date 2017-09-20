@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2017.8.24)  20 SEP 2017 15:30
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2017.8.24)  20 SEP 2017 19:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -599,28 +599,24 @@ Chapter 3.
 [3
 
 ]
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 228.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 252.
- [4
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 252.
-
-(./ddp_report.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 252.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 252.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 252.
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 240.
+ [4] [5] [6]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 338.
+ [7]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 338.
+ (./ddp_report.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 338.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 338.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 338.
  ) 
 Here is how much of TeX's memory you used:
- 10999 strings out of 495564
- 150419 string characters out of 6186598
- 219413 words of memory out of 5000000
- 14111 multiletter control sequences out of 15000+600000
- 17628 words of font info for 50 fonts, out of 8000000 for 9000
+ 10981 strings out of 495564
+ 150193 string characters out of 6186598
+ 222690 words of memory out of 5000000
+ 14095 multiletter control sequences out of 15000+600000
+ 19972 words of font info for 54 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 36i,5n,48p,283b,343s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,12n,48p,866b,343s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ddp_report.pdf (9 pages).
+Output written on ddp_report.pdf (12 pages).

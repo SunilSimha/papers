@@ -216,37 +216,123 @@ friends has provided me with an enjoyable environment to work in.
 	\section{Observed distribution}
 \chapter{Cosmological perturbation theory}
 	\section{Introduction}
+		One of the successes of the general theory of relativity is the explanation of the cosmological expansion of the universe and the subsequent inference that there was the Big Bang, an event of unimaginable proportions that "started" the universe. General relativity could describe cosmological evolution if one could determine the matter distribution of the universe. In the days before computers, it was very difficult to solve the Einstein equations for a general case. This did not stop the development of solutions for certain special cases. The uniform, isotropic universe gives rise to the Friedmann-Lemaitre-Robertson-Walker (FLRW) metric and subsequently one obtains the Friedmann equations for the evolution of the universe, specifically, the scale factor $a(t)$. The first Friedmann equation is
+		\begin{equation}
+			\begin{aligned}
+				H^2&=H_0^2\left[\frac{\Omega_{m0}}{a^3}+
+													\frac{{\Omega}_{r0}}{a^4}+
+													{\Omega}_{\Lambda 0}+
+													\frac{1-\Omega_0}{a^2}\right]\\
+				\frac{\ddot{a}}{a}
+			\end{aligned}
+		\end{equation}
+		Where $H$ is the Hubble parameter, $\Omega_{m},\Omega_{r},\Omega_{\Lambda}$ represent the energy densities of non-relativistic matter, relativistic matter and the cosmological constant and $\Omega_0=\Omega_{m0}+\Omega_{r0}+\Omega_{\Lambda 0}$. The subscripts of 0 indicates the parameters have been measured at present time.
+		
+		Observations indicate the universe is indeed homogeneous and isotropic on scales larger than ~100 Mpc. This was fortuitous because then the Friedmann equations could be used successfully to describe evolution on such scales. However, on much smaller scales we do see a lot of inhomogeneity and this requires a different metric. Again, it is possible to numerically obtain solutions but they are very difficult indeed. Fortunately, observations come to our rescue here too.
+		
+		The cosmic microwave background radiation (CMBR) provides very strong evidence for the big bang model. The CMBR is isotropic to very large extent and the quadrupole anisotropies have amplitudes of the order of 10 microkelvins as compared to the monopole term of 2.7 K. This means the universe started out with very small anisotropies and thus one can hope to explore a perturbative approach to describe structure formation in the universe.
+		
 	\section{Perturbation theory in the Newtonian Limit}
+		What one would do next would be to write down a  perturbed metric in presence of a perturbed energy density and proceed to solve Einstein's equations order by order. This process is complicated by the fact that a general coordinate transformation can make the energy density field arbitrarily large or small. One can work in a specific, presumably physically well0motivated gauge and solve for all quantities or alternatively, work in a gauge with simplified equations but make it extremely hard to interpret physically.
+		
+		Given these seemingly unattractive alternatives, the desperate undergraduate like myself is tempted to look for a third. Enter the world of Newtonian perturbation. One needs to keep in mind that the cosmological structures in mind (like galaxies or clusters) are well within the Hubble radius ($H^{-1} = 1/100h Mpc$) the radius of a causally connected sphere in the universe, and thus cannot be expected to be affected greatly by perturbations in lengthscales larger than the Hubble radius. It is only for these larger lengthscales that general relativistic effects become important. For within the hubble radius, one can use Newtonian perturbation theory without worrying about the concerns of the previous paragraph because the Newtonian limit defines a unique frame. This also simplifies the equations and makes it easy to study order by order.
+		
+		\subsection{The Newtonian Lagrangian}
+			First we need to define a couple of quantities. Firstly, we need to define our coordinate system. There is the physical coordinate system where each position is defined by a position vector $\mathbf{r}$ and the comoving coordinates $\mathbf{r}=a\mathbf{x}$. The density field can be defined as:
+			\begin{equation}
+				\begin{aligned}
+					\rho(\mathbf{r},t)&=\rho_b(t)+\delta\rho(\mathbf{r},t)\\
+												 &=\rho_b(t)(1+\delta(\mathbf{r},t))
+				\end{aligned}
+			\end{equation}
+			Here $\rho_b$ is the background density. This is independent of the spatial coordinates because it is the solution of the Friedmann equations. $\delta$ is defined as the density contrast and is equal to $\delta\rho/\rho_b$.
+			
+			For an particle in the universe, its physical velocity is $\mathbf{u}=\dot{\mathbf{r}}$ where the overdot represents the total derivative in time. Thus
+			$$
+			\begin{aligned}
+				\mathbf{u} &= \dot{a}\mathbf{x} + a\dot{\mathbf{x}}\\
+									&=\dot{a}\mathbf{x} + v\\
+			\end{aligned}
+			$$
+			Here one can see the distinct components of velocity, the first simply being hubble flow while the second represents peculiar velocity.
+			For such a particle, the kinetic energy is $mu^2/2$
+			$$
+			\begin{aligned}
+				T&=\frac{mu^2}{2}\\
+				  &=\frac{m\dot{a}^2 x^2 + ma^2\dot{x}^2+ma\dot{a}\mathbf{x}.\mathbf{\dot{x}}}{2}
+			\end{aligned}
+			$$
+			The lagrangian $\mathcal{L} = mu^2/2 - m\phi'$ for the scalar potential $\phi'$. One can simplify this by recalling that the equations of motion are invariant under the addition of a total derivative of a scalar to the lagrangian. Consider the scalar:
+			$$
+			\begin{aligned}
+				\Psi &=\frac{ma\dot{a}x^2}{2}\\
+				\frac{d\Psi}{dt}&=\frac{m\dot{a}^2 x^2 + ma\ddot{a}x^2+ma\dot{a}\mathbf{x}.\mathbf{\dot{x}}}{2}
+			\end{aligned}
+			$$
+			The lagrangian is changed to:
+			$$
+			\begin{aligned}
+				\mathcal{L}'&=\mathcal{L}-\frac{d\Psi}{dt}\\
+									 &=\frac{ma^2\dot{x}^2-ma\ddot{a}x^2}{2}-m\phi'\\
+			\end{aligned}
+			$$
+			Redefining the potential as $\phi = \phi'+\frac{a\ddot{a}x^2}{2}$
+			\begin{equation}
+				\mathcal{L}'=\frac{mv^2}{2}-m\phi
+			\end{equation}
+			The Euler Lagrange equations describe the motion of the particles. While deriving them, one needs to keep in mind that the trajectories must be consistent with the Friedmann equations. Thus they serve as constraints and one must use Langrange multipliers suitably to obtain their trajectories.
+		\subsection{The field equation}
+			The gravitational field is defined by the Poisson equation in the Newtonian limit.
+			\begin{equation}
+			\nabla_r^2\phi'=4\pi G\rho(\mathbf{r},t)
+			\end{equation}
+			Since we're going to work in comoving coordinates, we need to suitably transform this equation. These are how the partial derivatives transform:
+			\begin{equation}
+				\begin{aligned}
+					\nabla_r&=\frac{1}{a}\nabla_x\\
+					\frac{\partial}{\partial t}_r&=\frac{\partial}{\partial t}_x-H\mathbf{x.\nabla_x}\\
+				\end{aligned}
+				\label{eq:transform}
+			\end{equation}
+			Thus the transformed field equation is:
+			\begin{equation}
+				\begin{aligned}
+					\nabla^2_x\phi'&=4\pi Ga^2\rho\\
+					\nabla^2_x\left[\phi-\frac{a\ddot{a}x^2}{2}\right]&=4\pi Ga^2\rho\\
+					\nabla_x^2\phi&=4\pi Ga^2\rho+3a\ddot{a}\\
+				\end{aligned}
+				\label{eq:phi_x}
+			\end{equation}
+			
+		\subsection{In a matter dominated universe}
+			The form of the first Friedmann equation is much simplified if we assume that the universe is dominated by matter and that the curvature $1-\Omega_0=0$, i.e. a spatially flat universe. This assumption is justified in the time after radiation domination and before dark energy domination. Since this covers a sizeable portion of the universe's history, this isn't a bad assumption at all. In this scenario, the first Friedmann equation reduces to $H^2=H_0^2\Omega_{m0}/{a^3}$. This implies:
+			\begin{equation}
+				\begin{aligned}
+					\frac{\dot{a}^2}{a^2}a^3&=constant\\
+					\dot{a}^2a&=constant\\
+					2a\dot{a}\ddot{a}+\dot{a}^3&=0\\
+					\ddot{a}&=\frac{-\dot{a}^2}{2a}\\
+				\end{aligned}
+				\label{eq:ddot_a}
+			\end{equation}
+			The field equation is suitably modified. Substituting \ref{eq:ddot_a} in \ref{eq:phi_x}, we get:
+			\begin{equation}
+				\begin{aligned}
+					\nabla_x^2\phi&=4\pi G a^2\rho -\frac{3}{2}\dot{a}^2\\
+											   &=4\pi G a^2\rho- \frac{3}{2}\left(a^2H_0^2\Omega_m\right)\\
+												&=4\pi Ga^2\rho-4\pi Ga^2\rho_b\\
+					\nabla_x^2\phi&=4\pi G a^2\rho_b\delta\\
+				\end{aligned}
+			\end{equation}
+		\subsection{The fluid equations}
+			All the matter present in the universe will behave essentially like a fluid. Thus we can write the equation of continuity and the Euler equation for it.
+			\begin{equation}
+				\frac{\partial \rho}{\partial t}_r+\nabla_r.(\rho\mathbf{u})=0
+			\end{equation}
+			\begin{equation}
+				\frac{\partial\mathbf{u}}{\partial t}_r+
+			\end{equation}
 	\section{Linear perturbation theory: The Meszaros equation}
 	\section{Non-linear perturbations: Spherical collapse}
 	\section{Press-Schrechter Formalism}
-
-%Write a bib file for this. This is a mess.
-\begin{thebibliography}{99}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\bibitem{2df}
-See, {\tt http://magnum.anu.edu.au/~TDFgg/}.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\bibitem{sdss}
-See, {\tt http://www.sdss.org/}.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\bibitem{webb-1999}
-S.~Webb, {\sl Measuring the Universe}\/ (Springer, Berlin, 1999).
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\bibitem{scp}
-See, {\tt http://supernova.lbl.gov/}.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\bibitem{snls}
-See, {\tt http://snls.in2p3.fr/}.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\bibitem{durrer-2008}
-R.~Durrer, {\sl The Cosmic Microwave Background}\/ (Cambridge University Press, 
-Cambridge, England, 2008).
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\bibitem{padmanabhan-1999}
-T.~Padmanabhan, {\sl Theoretical Astrophysics, Volume III:~Galaxies and 
-Cosmology},\/ (Cambridge University Press, Cambridge, England, 1999).
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\end{thebibliography}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
