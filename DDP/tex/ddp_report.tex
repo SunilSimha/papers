@@ -1,0 +1,252 @@
+\documentclass[12pt,a4paper,oneside]{book} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{ifthen}
+\usepackage{graphicx}
+\usepackage[dvips]{epsfig}
+\usepackage{grffile} %Allows the graphics files to have spaces in their addresses
+\usepackage{enumerate}
+\usepackage{calc}
+\usepackage{multicol} 
+\usepackage{titlesec}
+%\usepackage{showkeys}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{a4}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{t1enc,times}
+\usepackage{latexsym,amssymb}
+\usepackage{amsmath}
+\usepackage{amstext}
+%\usepackage[T1]{fontenc}
+%\usepackage{cmbright}
+\usepackage{pifont}
+\usepackage{marvosym}
+%\usepackage{pslatex}
+\usepackage{stmaryrd}
+%\usepackage{txfonts}  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fancybox} 
+\usepackage{fancyhdr}
+\usepackage{fullpage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[left = 0.5in, right = 0.5in, top = 0.8in, bottom =1in]{geometry}
+\usepackage[colorlinks=true, linkcolor = blue, citecolor = blue]{hyperref}%Coloured hyperlinks
+\setlength{\columnsep}{0.3in} %column separation
+%\usepackage{url}    
+%\ExecuteOptions{dvips}
+%\usepackage[pdftex,colorlinks=true]{hyperref}
+%\hypersetup{backref,pdfpagemode=UseThumbs,pdfstartview=Fit,
+%pdfpagelayout=SinglePage,pdfstartpage=1,colorlinks=true,menucolor=msc,
+%anchorcolor=msc,pagecolor=msc,urlcolor=rfr,breaklinks=true,hyperfootnotes=true}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\graphicspath{{../figs/}}
+\pagestyle{fancy}
+\fancyhf{} 
+%\renewcommand{\headrulewidth}{1pt}
+%\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headwidth}{\textwidth}
+\fancyhead[LE]{\leftmark}
+\fancyhead[RO]{\small \rightmark}
+\fancyfoot[C]{\thepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tolerance 4000
+\textwidth 17.00cm
+\topmargin -0.30cm
+\oddsidemargin -0.25cm
+\evensidemargin -0.25cm
+\textheight 23.00cm
+%\headsep 12pt
+\headheight 15pt
+\footskip 60pt
+%\parindent 12pt
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\rmdefault}{ptm}  % times
+\renewcommand{\rmdefault}{phv}  % helvetica
+\renewcommand{\rmdefault}{pbk}  % bookman
+\renewcommand{\rmdefault}{ppl}  % palatino
+\renewcommand{\sfdefault}{phv}  % helvetica as sans serif
+\renewcommand{\ttdefault}{pcr}  % courier as fixed width
+\renewcommand{\tabcolsep}{8pt}
+\renewcommand{\arraystretch}{1.25}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\nn{\nonumber}
+\def\f{{\frac}}
+\def\pa{{\partial}}
+\def\d{{\rm d}}
+\def\l{\left}
+\def\r{\right}
+\def\Mpl{M_{_{\rm Pl}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\done{\marginpar {\scriptsize DONE}}
+\def\check{\marginpar {\scriptsize CHECK}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\baselineskip 20pt
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagenumbering{roman}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\thispagestyle{empty}
+\topskip 15pt
+\hrule\hrule\hrule\hrule\hrule
+\vskip 20pt
+\centerline{\Huge \bf Mg II absorber clustering} 
+\vskip 15pt
+\centerline{\Huge \bf along QSO sightlines} 
+\vskip 20pt
+\hrule\hrule\hrule\hrule\hrule
+\vskip 30pt
+\centerline{\Large A project report}
+\vskip 8pt
+\centerline{\Large submitted in partial fulfillment 
+for the award of the degree of}
+\vskip 8pt
+\centerline{\Large Master of Science}
+\vskip 8pt
+\centerline{\Large in}
+\vskip 8pt 
+\centerline{\Large Physics}
+\vskip 8pt
+\centerline{\Large by}
+\vskip 8pt
+\centerline{\Large \bf H S Sunil Simha}
+\vskip 8pt
+\centerline{\Large under the guidance of}
+\vskip 8pt
+\centerline{\Large  Dr. L. Sriramkumar, IIT Madras}
+
+\vskip 8pt
+\centerline{\Large  Dr. R Srianand, IUCAA, Pune}
+\vskip 30pt 
+\begin{center}
+\epsfig{file=iitm.ps, width=3.0cm, height=3.0cm}
+\end{center}
+\vskip 8pt 
+\centerline{\Large \bf Department of Physics}
+\vskip 8pt 
+\centerline{\Large \bf Indian Institute of Technology Madras}
+\vskip 8pt 
+\centerline{\Large \bf Chennai~600036, India}
+\vskip 8pt
+\centerline{\Large \bf April 2018}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage\topskip 40pt
+\centerline{\Large CERTIFICATE}
+\thispagestyle{empty}
+\vskip 20pt\noindent 
+This is to certify that the project titled {\bf MgII absorber clustering along QSO lines of sight} is a bona fide record of work done by 
+{\bf H S Sunil Simha} towards the partial fulfillment of the 
+requirements of the Master of Science degree in Physics at the Indian 
+Institute of Technology, Madras, Chennai 600036, India.
+\vskip 120pt
+\hspace{240pt}(L.~Sriramkumar, Project supervisor)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage\topskip 40pt
+\thispagestyle{empty}
+\centerline{\Large ACKNOWLEDGEMENTS}
+\vskip 20pt\noindent 
+I would take this opportunity to thank IIT Madras and IUCAA for providing me with this opportunity to work on this research project. I am grateful to {\bf Dr. L. Sriramkumar} and {\bf Dr. R Srianand} for their constant
+guidance and motivation. 
+I am grateful to my parents for always encouraging me and the support of my
+friends has provided me with an enjoyable environment to work in.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage\topskip 40pt
+\thispagestyle{empty}
+\centerline{\Large ABSTRACT}
+\vskip 20pt\noindent 
+\begin{itemize}
+	\item Say something about study of Mg II absorbers
+	\item Something about cosmological perturbation theory
+	\item About how these guys are related
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\thispagestyle{empty}
+\tableofcontents
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Introduction}
+	\section{Large scale structure in cosmology?}
+	\section{Mg II absorbers along QSO sightlines}
+\chapter{Data Acquisition and Processing}
+	\section{SDSS data}
+	\section{Theoretical models for cloud distribution}
+	\section{Observed distribution}
+\chapter{Cosmological perturbation theory}
+	\section{Introduction}
+	\section{Perturbation theory in the Newtonian Limit}
+	\section{Linear perturbation theory: The Meszaros equation}
+	\section{Non-linear perturbations: Spherical collapse}
+	\section{Press-Schrechter Formalism}
+
+%Write a bib file for this. This is a mess.
+\begin{thebibliography}{99}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{2df}
+See, {\tt http://magnum.anu.edu.au/~TDFgg/}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{sdss}
+See, {\tt http://www.sdss.org/}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{webb-1999}
+S.~Webb, {\sl Measuring the Universe}\/ (Springer, Berlin, 1999).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{scp}
+See, {\tt http://supernova.lbl.gov/}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{snls}
+See, {\tt http://snls.in2p3.fr/}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{durrer-2008}
+R.~Durrer, {\sl The Cosmic Microwave Background}\/ (Cambridge University Press, 
+Cambridge, England, 2008).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{padmanabhan-1999}
+T.~Padmanabhan, {\sl Theoretical Astrophysics, Volume III:~Galaxies and 
+Cosmology},\/ (Cambridge University Press, Cambridge, England, 1999).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{thebibliography}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
