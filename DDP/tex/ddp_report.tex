@@ -94,7 +94,8 @@
 \def\l{\left}
 \def\r{\right}
 \def\Mpl{M_{_{\rm Pl}}}
-
+\def\mb{\mathbf}
+\newcommand{\del}{\mathbf{\nabla}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \def\done{\marginpar {\scriptsize DONE}}
@@ -223,14 +224,14 @@ friends has provided me with an enjoyable environment to work in.
 													\frac{{\Omega}_{r0}}{a^4}+
 													{\Omega}_{\Lambda 0}+
 													\frac{1-\Omega_0}{a^2}\right]\\
-				\frac{\ddot{a}}{a}
+				\frac{\ddot{a}}{a}&=-\frac{H_0^2}{2}[\frac{3P}{\rho_{cr_0}}+\Omega]\\
 			\end{aligned}
 		\end{equation}
-		Where $H$ is the Hubble parameter, $\Omega_{m},\Omega_{r},\Omega_{\Lambda}$ represent the energy densities of non-relativistic matter, relativistic matter and the cosmological constant and $\Omega_0=\Omega_{m0}+\Omega_{r0}+\Omega_{\Lambda 0}$. The subscripts of 0 indicates the parameters have been measured at present time.
+		Where $H$ is the Hubble parameter, $\Omega_{m},\Omega_{r},\Omega_{\Lambda}$ represent the energy densities in units of the critical density ($\rho_{cr_0}=3H_0^2/8\pi G$) of non-relativistic matter, relativistic matter and the cosmological constant and $\Omega=\Omega_{m}+\Omega_{r}+\Omega_{\Lambda }$. The subscripts of 0 indicates the parameters have been measured at present time.
 		
 		Observations indicate the universe is indeed homogeneous and isotropic on scales larger than ~100 Mpc. This was fortuitous because then the Friedmann equations could be used successfully to describe evolution on such scales. However, on much smaller scales we do see a lot of inhomogeneity and this requires a different metric. Again, it is possible to numerically obtain solutions but they are very difficult indeed. Fortunately, observations come to our rescue here too.
 		
-		The cosmic microwave background radiation (CMBR) provides very strong evidence for the big bang model. The CMBR is isotropic to very large extent and the quadrupole anisotropies have amplitudes of the order of 10 microkelvins as compared to the monopole term of 2.7 K. This means the universe started out with very small anisotropies and thus one can hope to explore a perturbative approach to describe structure formation in the universe.
+		The cosmic microwave background radiation (CMBR) provides very strong evidence for the big bang model. The CMBR is isotropic to very large extent and the quadrupole anisotropies have amplitudes of the order of 10 $\mu K$ as compared to the monopole term of 2.7 K. This means the universe started out with very small anisotropies and thus one can hope to explore a perturbative approach to describe structure formation in the universe.
 		
 	\section{Perturbation theory in the Newtonian Limit}
 		What one would do next would be to write down a  perturbed metric in presence of a perturbed energy density and proceed to solve Einstein's equations order by order. This process is complicated by the fact that a general coordinate transformation can make the energy density field arbitrarily large or small. One can work in a specific, presumably physically well0motivated gauge and solve for all quantities or alternatively, work in a gauge with simplified equations but make it extremely hard to interpret physically.
@@ -323,6 +324,7 @@ friends has provided me with an enjoyable environment to work in.
 												&=4\pi Ga^2\rho-4\pi Ga^2\rho_b\\
 					\nabla_x^2\phi&=4\pi G a^2\rho_b\delta\\
 				\end{aligned}
+				\label{eq:perturb-poisson}
 			\end{equation}
 		\subsection{The fluid equations}
 			All the matter present in the universe will behave essentially like a fluid. Thus we can write the equation of continuity and the Euler equation for it.
@@ -330,9 +332,77 @@ friends has provided me with an enjoyable environment to work in.
 				\frac{\partial \rho}{\partial t}_r+\nabla_r.(\rho\mathbf{u})=0
 			\end{equation}
 			\begin{equation}
-				\frac{\partial\mathbf{u}}{\partial t}_r+
+				\frac{\partial\mathbf{u}}{\partial t}_r+\left(\mathbf{u.\nabla_r}\right)\mathbf{u}=-\frac{1}{\rho}\nabla_rP-\nabla_r\phi'
 			\end{equation}
+			As before, we need to recast these equations in terms of comoving coordinates. Using \ref{eq:transform}, firstly we transform the equation of continuity:
+			\begin{equation}
+				\begin{aligned}
+					\frac{\partial\rho}{\partial t}_x -H\mathbf{x.\nabla_x\rho}+\frac{1}{a}\nabla_x(\rho\mathbf{u})&=0\\
+					\frac{\partial\rho}{\partial t}_x -H\rho+\frac{1}{a}\nabla_x(\rho\mathbf{\dot{a}\mathbf{x}+\mathbf{v}})&=0\\
+					\frac{\partial\rho}{\partial t}_x +3H\rho+\frac{1}{a}\nabla_x(\rho\mathbf{v})&=0
+					\end{aligned}
+					\label{eq:cont_x_nodelta}
+			\end{equation}
+			Then, the Euler equation:
+			\begin{equation}
+				\begin{aligned}
+					\frac{\pa\mathbf{u}}{\partial t}_x -H\mathbf{x.\nabla_xu}+\frac{\mathbf{(u.\nabla_x)u}}{a}&=-\left(\frac{\nabla_xP}{\rho a}+\frac{\nabla_x\phi'}{a}\right)\\
+					\ddot{a}\mathbf{u}+\frac{\pa \mathbf{v}}{\partial t}_x +\frac{\mathbf{(v.\nabla_x)u}}{a}&=-\left(\frac{\nabla_xP}{\rho a}+\frac{\nabla_x\phi'}{a}\right)\\
+					\ddot{a}\mathbf{u}+\frac{\pa \mathbf{v}}{\partial t}_x +\frac{\mathbf{(v.\nabla_x)}(\dot{a}\mathbf{x+v})}{a}&=-\left(\frac{\nabla_xP}{\rho a}+\frac{\nabla_x\phi'}{a}\right)\\
+					\ddot{a}\mathbf{u}+\frac{\pa \mathbf{v}}{\partial t}_x +H\mathbf{v}+\frac{\mathbf{(v.\nabla_x)}\mathbf{v}}{a}&=-\left(\frac{\nabla_xP}{\rho a}+\frac{\nabla_x\phi'}{a}\right)\\
+					\frac{\pa \mathbf{v}}{\partial t}_x +H\mathbf{v}+\frac{\mathbf{(v.\nabla_x)}\mathbf{v}}{a}&=-\left(\frac{\nabla_xP}{\rho a}+\frac{\nabla_x\phi}{a}\right)\\
+				\end{aligned}
+				\label{eq:euler_x_nodelta}
+			\end{equation}
+			Notice the replacement of $\phi'$ by $\phi$ in the last step. Henceforth, since we're working exclusively in the comoving coordinates, we shall drop the subscripts. If we were to recast the equations in terms of the density contrast, we'd have, in index notation:
+			\begin{equation}
+				\begin{aligned}
+					\frac{\partial \delta}{\partial t}+\frac{\partial_i\left[(1+\delta)v^i\right]}{a}&=0\\
+					\frac{\partial v^i}{\partial t}+Hv^i+\frac{v^j\partial_jv^i}{a}&=-\left(\frac{\partial^i P}{a\rho_b(1+\delta)}+\frac{\partial^i\phi}{a}\right)\\
+				\end{aligned}
+				\label{eq:fluid_delta_x}
+			\end{equation}
+			In obtaining the first equation, we have used the fact that in a matter dominated universe $\rho_b\propto a^{-3}$ and thus
+			\begin{equation}
+				\frac{\partial \rho_b}{\partial t}+3H\rho_b=0
+				\label{eq:matter-dom}
+			\end{equation}
+			One can proceed with further simplification. Multiplying \ref{eq:cont_x_nodelta} by $v^j$ and \ref{eq:euler_x_nodelta} with $\delta$ and adding the two, we get:
+			\begin{equation}
+				\partial_t(\rho v^i)+4H\rho v^i+\frac{\partial_j(\rho v^jv^i)}{a}=-\frac{1}{a}(\partial^iP+\rho\partial^i\phi)\\
+				\label{eq:rho-vi_combo}
+			\end{equation}
+			Here, we are switching to the short-hand notation for partial derivatives. The indices are representative of spatial coordinates while $t$ stands for differentiation w.r.t. time. It is nice to note that this is an equation which describes the transfer of momentum per unit volume in the universe. In fact, if $4H\rho v^i$ is brought to the RHS, one can identify the RHS to be some sort of a source term while the LHS is a total derivative (there is a factor of $1/a$ extra but that is because we are working in terms of comoving coordinates). We can recast this in terms of the density contrast.
+			
+				$$
+					\pa_t[\rho_b(1+\delta)v^i]+4H\rho_b(1+\delta)v^i+\frac{1}{a}[\rho_b(1+\delta)v^jv^i]=-\frac{1}{a}(\pa^iP+\rho_b(1+\delta)\pa^i\phi)\\
+				$$
+			Using \ref{eq:matter-dom} and \ref{eq:fluid_delta_x}:
+			$$
+			H(1+\delta)v^i+\pa_t[(1+\delta)v^i]-\pa_t\delta v^i+\frac{1}{a}(1+\delta)v^j\pa_jv^i=-\frac{1}{\rho_ba}(\pa^iP+\rho_b(1+\delta)\pa^i\phi)
+			$$
+			We can now take its divergence and use \ref{eq:fluid_delta_x} to obtain:
+			\begin{equation}
+				\pa_t^2\delta+2H\pa_t\delta=\frac{\nabla^2P}{\rho_ba^2}+\frac{1}{a^2}\nabla.(1+\delta)\nabla\phi+\frac{1}{a^2}\pa_i\pa_j[(1+\delta)v^iv^j]\\
+				\label{eq:newt-perturb-exact}
+			\end{equation}
+			This is the exact equation of growth of density perturbations in a flat space, matter dominated universe in the Newtonian limit.			
 	\section{Linear perturbation theory: The Meszaros equation}
+		From \ref{eq:newt-perturb-exact} if want to obtain the linear theory, we need to understand the order of different quantities. From the CMBR, we know the amplitude of the perturbations in the early universe were of the order of one part in a hundred thousand. Calling this quantity $\epsilon$, we can see that $\delta\propto\epsilon$ in the leading order. This implies $\phi$ was also linear in the leading order. The peculiar velocities are also $\mathcal{O}(\epsilon)$. Thus in \ref{eq:newt-perturb-exact}, if one were to collect term only up to a linear order in $\epsilon$, one would get:
+		$$
+		\begin{aligned}
+			\partial_t\delta+\frac{\nabla.\mathbf{v}}{a}&=0\\
+			\pa_t^2\delta+2H\pa_t\delta&=\frac{1}{a^2\rho_b}(\nabla^2P+\rho_b\phi)\\
+		\end{aligned}
+		$$
+		Substituting \ref{eq:perturb-poisson} in the second equation, we get the Meszaros equation:
+		\begin{equation}
+			\pa_t^2\delta+2H\pa_t\delta=\frac{1}{a^2}(\frac{\nabla^2P}{\rho_b}+4\pi G\rho_b\delta)\\
+			\label{eq:meszaros}
+		\end{equation}
+		Now it is not possible to solve this in the most general case analytically. Therefore, we shall consider special cases where the solution is tractable.
+		\subsection{Spherically symmetric solutions}
+			Consider a negligible relativistic background energy density. In a spherically symmetric perturbation, each shell behaves like a mini homogeneous isotropic universe (first noted by Lemaitre). 
 	\section{Non-linear perturbations: Spherical collapse}
 	\section{Press-Schrechter Formalism}
 \end{document}

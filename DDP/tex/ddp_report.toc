@@ -12,6 +12,7 @@
 \contentsline {subsection}{\numberline {3.2.2}The field equation}{6}{subsection.3.2.2}
 \contentsline {subsection}{\numberline {3.2.3}In a matter dominated universe}{6}{subsection.3.2.3}
 \contentsline {subsection}{\numberline {3.2.4}The fluid equations}{7}{subsection.3.2.4}
-\contentsline {section}{\numberline {3.3}Linear perturbation theory: The Meszaros equation}{7}{section.3.3}
-\contentsline {section}{\numberline {3.4}Non-linear perturbations: Spherical collapse}{7}{section.3.4}
-\contentsline {section}{\numberline {3.5}Press-Schrechter Formalism}{7}{section.3.5}
+\contentsline {section}{\numberline {3.3}Linear perturbation theory: The Meszaros equation}{9}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Spherically symmetric solutions}{9}{subsection.3.3.1}
+\contentsline {section}{\numberline {3.4}Non-linear perturbations: Spherical collapse}{9}{section.3.4}
+\contentsline {section}{\numberline {3.5}Press-Schrechter Formalism}{9}{section.3.5}
