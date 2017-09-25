@@ -402,7 +402,40 @@ friends has provided me with an enjoyable environment to work in.
 		\end{equation}
 		Now it is not possible to solve this in the most general case analytically. Therefore, we shall consider special cases where the solution is tractable.
 		\subsection{Spherically symmetric solutions}
-			Consider a negligible relativistic background energy density. In a spherically symmetric perturbation, each shell behaves like a mini homogeneous isotropic universe (first noted by Lemaitre). 
+			Consider a negligible relativistic background energy density. In a spherically symmetric perturbation with zero pressure, each shell behaves like a mini homogeneous isotropic universe (first noted by Lemaitre). /thus the fractional difference between the energy densities for homogeneuos models with slightly different parameters serves well for a density contrast function.
+			
+			Consider two models which are charaterised by $a_b,\rho_b$ and $a,\rho$. The one constraint we need to place over them in a matter dominated universe is the amount of matter in consideration. i.e. $\rho a^3=\rho_b a_b^3$. Now if we were to assume the two scale functions are related as:
+			$$a=a_b(1-\epsilon(t))$$
+			We'd get:
+			\begin{equation}
+				\delta=\rho/\rho_b-1=3\epsilon\\
+				\label{eq:rho-rho_b}
+			\end{equation}
+			up to first order in epsilon. Now because we assumed a pressure-less environment, the second Friedmann equation is:
+			$$\begin{aligned}
+			\frac{\ddot{a}}{a}&=-\frac{4}{3}\pi G\rho+\frac{\Lambda}{3}\\
+			\frac{\ddot{a_b}}{a_b}&=-\frac{4}{3}\pi G\rho_b+\frac{\Lambda}{3}
+			\end{aligned}
+			$$
+			Substituting for $a$ and $\delta$ from the previous equations and limiting to first order in $\epsilon$,
+			\begin{equation}
+				\begin{aligned}
+					\ddot{a_b}(1-\epsilon)-\ddot{\epsilon}a_b-2\dot{a_b}\dot{\epsilon}&=-\frac{4}{3}\pi G\rho_b(1+3\epsilon)a_b(1-\epsilon)+\frac{\Lambda}{3}a_b(1-\epsilon)\\
+					-\ddot{a_b}\epsilon-\ddot{\epsilon}a_b-2\dot{a_b}\dot{\epsilon}&=-\frac{8}{3}\pi G\rho_ba_b\epsilon-\frac{\Lambda}{3}a_b\epsilon\\
+					\ddot{\epsilon}+2\frac{\dot{a_b}}{a_b}\dot{\epsilon}&=4\pi G\rho_b\epsilon
+				\end{aligned}
+			\end{equation}
+			Notice that this is nothing but the Meszaros equation but in terms of $\epsilon$ instead of $\delta$. Thus for a family of solutions of the second Friedmann equation $a(t,\alpha)$ (parametrised by $\alpha$), there exists a solution to the Meszaros equation such that:
+			$$
+			\delta\propto\frac{1}{a}\frac{\pa a}{\pa\alpha}
+			$$
 	\section{Non-linear perturbations: Spherical collapse}
-	\section{Press-Schrechter Formalism}
+	\section{Press-Schechter Formalism}
+		In the conventional (by the standards of 1973) theory of cosmological perturbations,	the generally accepted statement regarding the chronological hierarchy of scales mass aggregation is that perturbations evolved linearly and gravitational condensation is a top-down approach. That is, mass aggregates on larger length scales before gravitation took it further and made denser and denser objects: Large clouds condensed to small clouds and yet smaller ones. While this seems to explain the formation of large objects of the order of $10^{15}M_\Sun$ and not on the scales of stars.
+		
+		The way out of this proposed by Zeldovich et al. was to develop non-linear, pancake-like structures that then developed shocks and fragmented to form lumpier objects.
+		
+		Press and Schechter in their 1973 paper proposed a bottom up approach, citing the possibility of statistical fluctuations of matter density growing in size due to self gravitation. That is, starting from point masses, fluctuations could grow in size due to matter aggregating. What they obtained as a result was the distribution of objects with a mass in the range $[M, M+dM]$. 
+		
+		This distribution is power law for small masses and decays exponentially after a certain mass scale. This formalism can work in complement to the standard perturbation theory.
 \end{document}
