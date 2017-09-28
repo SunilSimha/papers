@@ -13,6 +13,9 @@
 \contentsline {subsection}{\numberline {3.2.3}In a matter dominated universe}{6}{subsection.3.2.3}
 \contentsline {subsection}{\numberline {3.2.4}The fluid equations}{7}{subsection.3.2.4}
 \contentsline {section}{\numberline {3.3}Linear perturbation theory: The Meszaros equation}{9}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Spherically symmetric solutions}{9}{subsection.3.3.1}
-\contentsline {section}{\numberline {3.4}Non-linear perturbations: Spherical collapse}{10}{section.3.4}
-\contentsline {section}{\numberline {3.5}Press-Schechter Formalism}{10}{section.3.5}
+\contentsline {subsection}{\numberline {3.3.1}Solutions to the Meszaros equation}{9}{subsection.3.3.1}
+\contentsline {subsubsection}{Case 1: $P=0$}{9}{subsubsection*.2}
+\contentsline {subsubsection}{Case II: $P\not =0$}{10}{subsubsection*.3}
+\contentsline {subsection}{\numberline {3.3.2}The peculiar velocity}{11}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}Non-linear perturbations: Spherical collapse}{12}{section.3.4}
+\contentsline {section}{\numberline {3.5}Press-Schechter Formalism}{12}{section.3.5}

@@ -401,35 +401,104 @@ friends has provided me with an enjoyable environment to work in.
 			\label{eq:meszaros}
 		\end{equation}
 		Now it is not possible to solve this in the most general case analytically. Therefore, we shall consider special cases where the solution is tractable.
-		\subsection{Spherically symmetric solutions}
-			Consider a negligible relativistic background energy density. In a spherically symmetric perturbation with zero pressure, each shell behaves like a mini homogeneous isotropic universe (first noted by Lemaitre). /thus the fractional difference between the energy densities for homogeneuos models with slightly different parameters serves well for a density contrast function.
-			
-			Consider two models which are charaterised by $a_b,\rho_b$ and $a,\rho$. The one constraint we need to place over them in a matter dominated universe is the amount of matter in consideration. i.e. $\rho a^3=\rho_b a_b^3$. Now if we were to assume the two scale functions are related as:
-			$$a=a_b(1-\epsilon(t))$$
-			We'd get:
-			\begin{equation}
-				\delta=\rho/\rho_b-1=3\epsilon\\
-				\label{eq:rho-rho_b}
-			\end{equation}
-			up to first order in epsilon. Now because we assumed a pressure-less environment, the second Friedmann equation is:
-			$$\begin{aligned}
-			\frac{\ddot{a}}{a}&=-\frac{4}{3}\pi G\rho+\frac{\Lambda}{3}\\
-			\frac{\ddot{a_b}}{a_b}&=-\frac{4}{3}\pi G\rho_b+\frac{\Lambda}{3}
+		\subsection{Solutions to the Meszaros equation}
+			\subsubsection{Case 1: $P=0$}
+				For this section alone, we shall assume the over-dots represent partial derivatives in time. It doesn't really matter in the case of the Hubble parameter or the scale parameter as they are purely functions of time but the same cannot be said of density contrast. 
+				
+				It is particularly simple to solve the Meszaros equation in the scenario of the background pressure being zero. Let's closely examine the equation:
+				$$
+					\pa_t^2\delta+2H\pa_t\delta=\frac{1}{a^2}4\pi G\rho_b\delta\\
+				$$
+				Since it is a second order equation, there are two linearly independent solutions. Now, it is not easy to notice this but $H$ itself turns out to be a solution to this equation. Before we verify this, we need to keep in mind the second Friedmann equation. In the pressure-less scenario, it is reduced to:
+				$$
+					\frac{\ddot{a}}{a}=-\frac{4}{3}\pi G\rho_b
+				$$
+				Now let us substitute $H$ in the LHS of the Meszaros equation:
+				$$
+				\begin{aligned}
+					&=\ddot{H}+2H\dot{H}\\
+					&=\frac{\pa}{\pa t}\left(\frac{\ddot{a}}{a}-\frac{\dot{a}^2}{a^2}\right)+2\frac{\dot{a}}{a}\left(\frac{\ddot{a}}{a}-\frac{\dot{a}^2}{a^2}\right)\\
+					&=\frac{\dddot{a}}{a}-\frac{\ddot{a}\dot{a}}{a^2}-\frac{2\dot{a}\ddot{a}}{a^2}+\frac{2\dot{a}^3}{a^3}+\frac{2\dot{a}\ddot{a}}{a^2}-\frac{2\dot{a}^3}{a^3}\\
+					&=\frac{\dddot{a}}{a}-\frac{\ddot{a}\dot{a}}{a^2}\\
+					&=\frac{\pa }{\pa t}\left(\frac{\ddot{a}}{a}\right)\\
+					&=-\frac{4}{3}\pi G\dot{\rho_b}\\
+					&=-\frac{4}{3}\pi G(-3H\rho_b)\\
+					&=4\pi G \rho_b H=RHS\\
+				\end{aligned}
+				$$
+				Now that one solution is obtained, we can obtain the other using the Wronskian. If $\delta$ were the other solution,
+				$$
+				\begin{aligned}
+					W&=\dot{H}\delta-\dot{\delta}H\\
+					\dot{W}&=\ddot{H}\delta-\ddot{\delta}H\\
+					&=\delta(4\pi G\rho_bH-2H\dot{H})-H(4\pi G\rho_b\delta-2H\dot{\delta})\\
+					&=2HW\\
+					\Rightarrow W&=C/a^2\\
+					\Rightarrow\delta&=-CH\int_{0}^{t}\frac{da}{a^3H^3}\\
+				\end{aligned}
+				$$
+				Here $C$ is a constant of integration. Note that we solved a partial differential equation as if it were an ordinary one. This implies C is really a function of space. However, it is nice to note whatever the initial spatial dependence of the density contrast, linear perturbation theory predicts it will be preserved in form and will only get scaled by a function of the scale factor.
+			\subsubsection{Case II: $P\neq0$}
+				In this case, we can expand the pressure to a linear order in density:
+				$$
+				\begin{aligned}
+					P&=P_b+\frac{\pa P}{\pa \rho}(\rho_b\delta)\\
+					&=P_b+c_s^2\rho_b\delta\\
+					\Rightarrow\nabla^2P&=c_s^2\rho_b\nabla^2\delta\\
+				\end{aligned}
+				$$
+				$c_s$ being the speed of sound here. It is considered to be independent of spatial coordinates as a zeroth order approximation. Since $\delta$ is itself linear, we needn't consider the fluctuations in the speed of sound. Putting this in the Meszaros equation:
+				$$
+					\pa_t^2\delta+2H\pa_t\delta=\frac{c_s^2}{a^2}\nabla^2\delta+4\pi G\rho_b\delta\\
+				$$
+				This can be solved simply by the use of fourier transform from physical space to momentum space.
+				$$
+					\pa_t\tilde{\delta}+2H\pa_t\tilde{\delta}=\tilde{\delta}\left(4\pi G\rho_b-c_s^2\frac{k^2}{a^2}\right)\\
+				$$
+				$k$ being the wavevector modulus. This implies each mode evolves independently of the other. Linearity implies this sort of independence in the fourier space representation. This equation is now reduced in complexity and one can see the similarity between it and a damped harmonic oscillator. The key difference being the time dependence of the coefficient of $\pa_t\tilde{\delta}$. One would require numerical methods to get the exact solution. However, we can make guesses regarding the nature of the solution. Key to this lies in the coefficient of $\tilde{\delta}$. For the critical wavelength of
+				\begin{equation}
+					\lambda_J=\sqrt{\frac{\pi}{G\rho_b}}c_s\\
+					\label{ew:JeansLength}
+				\end{equation}
+				it would be zero and the solutions would be exponentially growing. This is called the Jean's length. It defines a length scale that determines whether or not a perturbation will grow. All wavelengths above this length scale will experience a growth and all below will oscillate and get damped in a universe with positive $H$. The time scale would of course depend on the value of $H$ itself.
+		\subsection{The peculiar velocity}
+			Now that we have solved for the density contrast, the peculiar velocity can be solved for using the linearised form of the first equation of \ref{eq:fluid_delta_x}.
+			$$
+				\pa_t\delta+\frac{\pa_iv^i}{a}=0\\
+			$$
+			Now $\delta$ can be written in terms of the potential as:
+			$$
+				\delta=-\frac{\nabla^2\phi}{4\pi G\rho_ba^2}
+			$$
+			This implies:
+			$$
+			\begin{aligned}
+				\nabla.\mathbf{v}&=\nabla.\left[a\pa_t\left(\frac{\nabla\phi}{4\pi G\rho_ba^2}\right)\right]\\
+				\Rightarrow\mathbf{v}&=a\pa_t\left(\frac{\nabla\phi}{4\pi G\rho_ba^2}\right)+\mathbf{F}\text{ where $\bf{\nabla.F}=0$}\\
 			\end{aligned}
 			$$
-			Substituting for $a$ and $\delta$ from the previous equations and limiting to first order in $\epsilon$,
-			\begin{equation}
-				\begin{aligned}
-					\ddot{a_b}(1-\epsilon)-\ddot{\epsilon}a_b-2\dot{a_b}\dot{\epsilon}&=-\frac{4}{3}\pi G\rho_b(1+3\epsilon)a_b(1-\epsilon)+\frac{\Lambda}{3}a_b(1-\epsilon)\\
-					-\ddot{a_b}\epsilon-\ddot{\epsilon}a_b-2\dot{a_b}\dot{\epsilon}&=-\frac{8}{3}\pi G\rho_ba_b\epsilon-\frac{\Lambda}{3}a_b\epsilon\\
-					\ddot{\epsilon}+2\frac{\dot{a_b}}{a_b}\dot{\epsilon}&=4\pi G\rho_b\epsilon
-				\end{aligned}
-			\end{equation}
-			Notice that this is nothing but the Meszaros equation but in terms of $\epsilon$ instead of $\delta$. Thus for a family of solutions of the second Friedmann equation $a(t,\alpha)$ (parametrised by $\alpha$), there exists a solution to the Meszaros equation such that:
+			In the regime of linear perturbation, $\mathbf{F}$ decays as $1/a$. This can be shown by considering the peculiar acceleration: $\mathbf{g}=d_t(a\mathbf{v})/a$. The total derivative of $\mathbf{v}$ can be replaced with a partial derivative in time because the term $\mathbf{(v.\nabla)v}$ is second order in $\mathbf{v}$ and can be effectively neglected.
 			$$
-			\delta\propto\frac{1}{a}\frac{\pa a}{\pa\alpha}
+			\mathbf{g}=\pa_t\mathbf{v}+H\mathbf{v}=-\frac{\nabla\phi}{a}\\
 			$$
+			Now since $\mathbf{g}$ itself is curl-less, we can say:
+			$$
+				\pa_t(a\mathbf{F})=0
+			$$
+			Thus the decay.
+			%The potential is given by the solution to the poisson equation \ref{eq:perturb-poisson}. Thus:
+			%$$
+			%\mathbf{g(x},t)=G\rho_ba\int d^3x'\delta(\mathbf{x'},t)\left(\mathbf{\frac{x-x'}{|x-x'|^3}}\right)
+			%$$
+			%Consider the object 
+			%$$
+			%\begin{aligned}
+			%	\pa_t\left(\frac{\mathbf{g(x,}t)}{4\pi Ga\rho_b}\right)&=\frac{1}{4\pi}\int d^3x'\pa_t\delta(\mathbf{x'},t)\left(\mathbf{\frac{x-x'}{|x-x'|^3}}\right)\\
+			%	&=-\frac{1}{4\pi a}\int d^3x'\nabla'.\mathbf{v}\left(\mathbf{\frac{x-x'}{|x-x'|^3}}\right)\\
+			%\end{aligned}
+			%$$
 	\section{Non-linear perturbations: Spherical collapse}
+		
 	\section{Press-Schechter Formalism}
 		In the conventional (by the standards of 1973) theory of cosmological perturbations,	the generally accepted statement regarding the chronological hierarchy of scales mass aggregation is that perturbations evolved linearly and gravitational condensation is a top-down approach. That is, mass aggregates on larger length scales before gravitation took it further and made denser and denser objects: Large clouds condensed to small clouds and yet smaller ones. While this seems to explain the formation of large objects of the order of $10^{15}M_\Sun$ and not on the scales of stars.
 		
