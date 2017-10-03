@@ -426,18 +426,18 @@ friends has provided me with an enjoyable environment to work in.
 					&=4\pi G \rho_b H=RHS\\
 				\end{aligned}
 				$$
-				Now that one solution is obtained, we can obtain the other using the Wronskian. If $\delta$ were the other solution,
+				Now that one solution is obtained, we can obtain the other using the Wronskian. If $D$ were the other solution,
 				$$
 				\begin{aligned}
-					W&=\dot{H}\delta-\dot{\delta}H\\
-					\dot{W}&=\ddot{H}\delta-\ddot{\delta}H\\
-					&=\delta(4\pi G\rho_bH-2H\dot{H})-H(4\pi G\rho_b\delta-2H\dot{\delta})\\
+					W&=\dot{H}D-\dot{D}H\\
+					\dot{W}&=\ddot{H}D-\ddot{D}H\\
+					&=D(4\pi G\rho_bH-2H\dot{H})-H(4\pi G\rho_bD-2H\dot{D})\\
 					&=2HW\\
 					\Rightarrow W&=C/a^2\\
-					\Rightarrow\delta&=-CH\int_{0}^{t}\frac{da}{a^3H^3}\\
+					\Rightarrow D&=-CH\int_{0}^{t}\frac{da}{a^3H^3}\\
 				\end{aligned}
 				$$
-				Here $C$ is a constant of integration. Note that we solved a partial differential equation as if it were an ordinary one. This implies C is really a function of space. However, it is nice to note whatever the initial spatial dependence of the density contrast, linear perturbation theory predicts it will be preserved in form and will only get scaled by a function of the scale factor.
+				Here $C$ is a constant of integration. Note that we solved a partial differential equation as if it were an ordinary one. This implies C is really a function of space. However, it is nice to note whatever the initial spatial dependence of the density contrast, linear perturbation theory predicts it will be preserved in form and will only get scaled by a function of the scale factor. The general solution is of course, a linear combination of the two. 
 			\subsubsection{Case II: $P\neq0$}
 				In this case, we can expand the pressure to a linear order in density:
 				$$
@@ -481,11 +481,11 @@ friends has provided me with an enjoyable environment to work in.
 			$$
 			\mathbf{g}=\pa_t\mathbf{v}+H\mathbf{v}=-\frac{\nabla\phi}{a}\\
 			$$
-			Now since $\mathbf{g}$ itself is curl-less, we can say:
+			Now since $\mathbf{g}$ itself is curl-less splitting the equation above into the divergence and divergence-free parts, we can say:
 			$$
 				\pa_t(a\mathbf{F})=0
 			$$
-			Thus the decay.
+			Thus the decay. 
 			%The potential is given by the solution to the poisson equation \ref{eq:perturb-poisson}. Thus:
 			%$$
 			%\mathbf{g(x},t)=G\rho_ba\int d^3x'\delta(\mathbf{x'},t)\left(\mathbf{\frac{x-x'}{|x-x'|^3}}\right)
@@ -498,7 +498,56 @@ friends has provided me with an enjoyable environment to work in.
 			%\end{aligned}
 			%$$
 	\section{Non-linear perturbations: Spherical collapse}
+		The spherically symmetric case is the easiest to solve for non-linearly as well. Consider matter at the boundary of a spherically symmetric, uniformly over-dense region characterised by a density contrast of $\delta$. If the total mass in the spherical region is $M$, the gravitational acceleration experienced by it is:
+		$$
+			\frac{d^2r}{dt^2}=-\frac{GM}{r^2}
+		$$
+		Integrating this once give us the statement of conservation of energy.
+		\begin{equation}
+			\frac{\dot{r}^2}{2}-\frac{GM}{r}=E\\
+			\label{eq:energy_sphere}
+		\end{equation}
+		The behaviour of matter distribution depends on $E$. If $E$ is negative, the region is gravitationally bound and if initially expanding, will come to a halt and subsequently contract eventually. If positive, the sphere continues expanding indefinitely.
 		
+		To rephrase this condition of collapse, consider beginning at a time when the density contrast was small. In which case, $\dot{r_i}\approx H_ir_i$ (the peculiar velocities being very small). The subscript $i$ here refers to initial conditions. The potential energy per unit mass at this instant is 
+		$$
+		U=-4\pi G\rho_b(1+\delta_i)r_i^2/3=-H_i^2r_i^2\Omega_i(1+\delta_i)/2=-K_i\Omega_i(1+\delta_i)\\
+		$$
+		Where $K_i$ is the initial kinetic energy per unit mass. Thus:
+		$E=K_i\Omega_i(\Omega_i^{-1}-(1+\delta_i))$. The condition for collapse, $E<0$ becomes: $\delta_i>\Omega_i^{-1}-1$. In a closed or a flat universe where $\Omega\geq1$, this is satisfied by any over-dense region. In an open universe, there exists a critical value above which such a condensation will occur.
+		
+		Consider now, a spherical shell whose maximum radius is $r_m$. Thus,
+		$$
+			E=-\frac{GM}{r_m}=-\frac{r_i}{r_m}K_i\Omega_i(1+\delta_i)
+		$$
+		Or
+		$$
+			\frac{r_m}{r_i}=\frac{1+\delta_i}{1+\delta_i-\Omega_i^{-1}}
+		$$
+		The size of $r_m$ in units of $r_i$ would be very large if the overdensity were just larger than $\Omega_i^{-1}-1$. This could mean a very long collapse time.
+		
+		It is fairly straightforward to integrate \ref{eq:energy_sphere}, which we shall do now for the case of negative $E$. For the sake of clarity, let's say $E=-A$.
+		$$
+		\begin{aligned}
+			\dot{r}&=\sqrt{\frac{2GM}{r}-2A}\\
+			t-t_i&=\int_{r_i}^{r}\frac{\sqrt{r'}dr'}{\sqrt{2GM-2Ar'}}\\
+		\end{aligned}
+		$$
+		After substituting $r'=(GM/A)\sin^2\theta'$ and integrating, we get:
+		$$
+			t-t_i=\frac{GM}{A^{3/2}}\left[(2\theta-2\theta_i)-(\sin2\theta-\sin2\theta_i)\right]\\
+		$$
+		We have a parametric solution. This solution is periodic and one can fix the value of $\theta_i$ in terms of the initial radius. There are two free parameters, namely the energy and the initial density contrast. We can re-parametrise these equations in more convenient terms as follows:
+		$$
+			r=X(1-\cos\Theta),t+T=Y(\Theta-\sin\Theta),X^3=GMY^2\\
+		$$
+		This is just renaming the constants and setting $\Theta=2\theta$. One can recognise this as the parametric equation for a cycloid. In these terms, the maximum radius would be $2X$ and thus 
+		$$
+		\begin{aligned}
+			X&=\frac{r_i}{2}\frac{1+\delta_i}{1+\delta_i-\Omega_i^{-1}}\\
+			Y&=\frac{1+\delta_i}{2H_i\Omega_i^{1/2}	(1+\delta_i-\Omega_i^{-1})^{3/2}}
+		\end{aligned}
+		$$
 	\section{Press-Schechter Formalism}
 		In the conventional (by the standards of 1973) theory of cosmological perturbations,	the generally accepted statement regarding the chronological hierarchy of scales mass aggregation is that perturbations evolved linearly and gravitational condensation is a top-down approach. That is, mass aggregates on larger length scales before gravitation took it further and made denser and denser objects: Large clouds condensed to small clouds and yet smaller ones. While this seems to explain the formation of large objects of the order of $10^{15}M_\Sun$ and not on the scales of stars.
 		
