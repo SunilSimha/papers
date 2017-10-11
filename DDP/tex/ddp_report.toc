@@ -1,21 +1,23 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Large scale structure in cosmology?}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Mg II absorbers along QSO sightlines}{1}{section.1.2}
-\contentsline {chapter}{\numberline {2}Data Acquisition and Processing}{2}{chapter.2}
-\contentsline {section}{\numberline {2.1}SDSS data}{2}{section.2.1}
-\contentsline {section}{\numberline {2.2}Theoretical models for cloud distribution}{2}{section.2.2}
-\contentsline {section}{\numberline {2.3}Observed distribution}{2}{section.2.3}
-\contentsline {chapter}{\numberline {3}Cosmological perturbation theory}{3}{chapter.3}
-\contentsline {section}{\numberline {3.1}Introduction}{3}{section.3.1}
-\contentsline {section}{\numberline {3.2}Perturbation theory in the Newtonian Limit}{4}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}The Newtonian Lagrangian}{4}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}The field equation}{6}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}In a matter dominated universe}{6}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}The fluid equations}{7}{subsection.3.2.4}
-\contentsline {section}{\numberline {3.3}Linear perturbation theory: The Meszaros equation}{9}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Solutions to the Meszaros equation}{9}{subsection.3.3.1}
-\contentsline {subsubsection}{Case 1: $P=0$}{9}{subsubsection*.2}
-\contentsline {subsubsection}{Case II: $P\not =0$}{11}{subsubsection*.3}
-\contentsline {subsection}{\numberline {3.3.2}The peculiar velocity}{12}{subsection.3.3.2}
-\contentsline {section}{\numberline {3.4}Non-linear perturbations: Spherical collapse}{12}{section.3.4}
-\contentsline {section}{\numberline {3.5}Press-Schechter Formalism}{14}{section.3.5}
+\contentsline {chapter}{\numberline {2}Data Acquisition and Processing}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}SDSS data}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}Theoretical models for cloud distribution}{3}{section.2.2}
+\contentsline {section}{\numberline {2.3}Observed distribution}{3}{section.2.3}
+\contentsline {chapter}{\numberline {3}Cosmological perturbation theory}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introduction}{5}{section.3.1}
+\contentsline {section}{\numberline {3.2}Perturbation theory in the Newtonian Limit}{6}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}The Newtonian Lagrangian}{6}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}The field equation}{8}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}In a matter dominated universe}{8}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}The fluid equations}{9}{subsection.3.2.4}
+\contentsline {section}{\numberline {3.3}Linear perturbation theory: The Meszaros equation}{11}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Solutions to the Meszaros equation}{11}{subsection.3.3.1}
+\contentsline {subsubsection}{Case 1: $P=0$}{11}{subsubsection*.2}
+\contentsline {subsubsection}{Case II: $P\not =0$}{13}{subsubsection*.3}
+\contentsline {subsection}{\numberline {3.3.2}The peculiar velocity}{14}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}Non-linear perturbations: Spherical collapse}{14}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Flat background universe}{17}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Virialisation}{18}{subsection.3.4.2}
+\contentsline {section}{\numberline {3.5}Press-Schechter Formalism}{18}{section.3.5}

@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper,oneside]{book} 
+\documentclass[12pt,a4paper,twoside]{book} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -427,16 +427,17 @@ friends has provided me with an enjoyable environment to work in.
 				\end{aligned}
 				$$
 				Now that one solution is obtained, we can obtain the other using the Wronskian. If $D$ were the other solution,
-				$$
-				\begin{aligned}
-					W&=\dot{H}D-\dot{D}H\\
-					\dot{W}&=\ddot{H}D-\ddot{D}H\\
-					&=D(4\pi G\rho_bH-2H\dot{H})-H(4\pi G\rho_bD-2H\dot{D})\\
-					&=2HW\\
-					\Rightarrow W&=C/a^2\\
-					\Rightarrow D&=-CH\int_{0}^{t}\frac{da}{a^3H^3}\\
-				\end{aligned}
-				$$
+				\begin{equation}
+					\begin{aligned}
+						W&=\dot{H}D-\dot{D}H\\
+						\dot{W}&=\ddot{H}D-\ddot{D}H\\
+						&=D(4\pi G\rho_bH-2H\dot{H})-H(4\pi G\rho_bD-2H\dot{D})\\
+						&=2HW\\
+						\Rightarrow W&=C/a^2\\
+						\Rightarrow D&=-CH\int_{0}^{t}\frac{da}{a^3H^3}\\
+					\end{aligned}
+					\label{eq:growth-linear}
+				\end{equation}
 				Here $C$ is a constant of integration. Note that we solved a partial differential equation as if it were an ordinary one. This implies C is really a function of space. However, it is nice to note whatever the initial spatial dependence of the density contrast, linear perturbation theory predicts it will be preserved in form and will only get scaled by a function of the scale factor. The general solution is of course, a linear combination of the two. 
 			\subsubsection{Case II: $P\neq0$}
 				In this case, we can expand the pressure to a linear order in density:
@@ -541,13 +542,62 @@ friends has provided me with an enjoyable environment to work in.
 		$$
 			r=X(1-\cos\Theta),t+T=Y(\Theta-\sin\Theta),X^3=GMY^2\\
 		$$
-		This is just renaming the constants and setting $\Theta=2\theta$. One can recognise this as the parametric equation for a cycloid. In these terms, the maximum radius would be $2X$ and thus 
+		This is just renaming the constants and setting $\Theta=2\theta$. One can recognise this as the parametric equation for a cycloid. 
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth]{spherical.eps}
+			\caption{\footnotesize The temporal evolution of the radius of a spherically symmetric perturbation. The parameter $\Theta$ goes from an arbitrary initial point (2 in this case) to $2\pi$. Of course, if $\Theta$ were to exceed that, this would periodically repeat. One needs to take into account the pressure experienced by matter at larger densities to effectively halt the gravitational collapse.}
+			\label{fig:sphere-cycloid}
+		\end{figure}
+		
+		In these terms, the maximum radius would be $2X$ and thus 
 		$$
 		\begin{aligned}
 			X&=\frac{r_i}{2}\frac{1+\delta_i}{1+\delta_i-\Omega_i^{-1}}\\
 			Y&=\frac{1+\delta_i}{2H_i\Omega_i^{1/2}	(1+\delta_i-\Omega_i^{-1})^{3/2}}
 		\end{aligned}
 		$$
+		\subsection{Flat background universe}
+			In this case, the equations are simplified on the account of $\Omega_i=1$. Thus,
+			$$
+			\begin{aligned}
+				r&=\frac{r_i}{2}\left(\frac{1+\delta_i}{\delta_i}\right)(1-\cos\Theta)\\
+				t+T&=\frac{1}{2H_i}\frac{1+\delta_i}{\delta_i^{3/2}}(\Theta-\sin\Theta)\\
+			\end{aligned}
+			$$
+			At $t=t_i$, $\cos\Theta_i=(1-\delta_i)/(1+\delta_i)$. Going by our assumption that $\delta_i\ll 1$, $\cos\Theta_i\approx1-2\delta_i$. Or $\Theta_i^2\approx4\delta_i$. This means
+			$$
+				H_i(t_i+T)=\frac{2}{3}(1+\delta_i)
+			$$
+			Since the background universe in a  matter dominated context obeys $H_it_i=2/3$, it follows that $T=2\delta_i/3H_i$ or $T/t_i=\delta_i\ll1$.
+			
+			To understand the evolution of the density contrast, one must understand the evolution of the background density as well. In the matter dominated universe,
+			\begin{equation}
+				\begin{aligned}
+					a\propto t^{2/3}; \rho_b&=\frac{1}{6\pi G t^2}\\
+					\therefore 1+\delta=\frac{\rho}{\rho_b}&=\frac{3M}{4\pi X^3}\frac{6\pi GY^2(\Theta-\sin\Theta)^2}{(1-\cos\Theta)^2}\\
+					\delta&=\frac{9(\Theta-\sin\Theta)^2}{2(1-\cos\Theta)^3}-1\\
+				\end{aligned}
+			\end{equation}
+			In the low $\Theta$ limit,
+			$$
+				\begin{aligned}
+					\delta&=\frac{9}{2}\frac{(\frac{\Theta^3}{3!}-\frac{\Theta^5}{5!}+\mathcal{O}(\Theta^7))^2}{(\frac{\Theta^2}{2!}-\frac{\Theta^4}{4!}+\mathcal{O}(\Theta^6))^3}-1\\
+					&=\left(1-\frac{\Theta^2}{10}+\mathcal{O}(\Theta^4)\right)\left(1+\frac{\Theta^2}{4}+\mathcal{O}(\Theta^4)\right)-1\\
+					&=\frac{3\Theta^2}{20}+\mathcal{O}(\Theta^4)\\
+					t&=\frac{Y\Theta^3}{6}+\mathcal{O}(\Theta^5)\\
+					\therefore \delta&\approx\frac{3}{20}\left(\frac{6t}{Y}\right)^{2/3}\\
+				\end{aligned}
+			$$
+			Since $H_i=2/(3t_i)$ for a flat, matter dominated universe,
+			$$
+				\delta=\delta_i\left[\frac{3}{5}\left(\frac{t}{t_i}\right)^{2/3}\right]\propto a
+			$$
+			This is exactly what one would get if one were to pop $H=2/(3t)$ in \ref{eq:growth-linear}. Thus this is consistent with the linear solution in the case where there is no peculiar velocity.
+		\subsection{Virialisation}
+			It can be estimated that the density contrast at turn-around would be nearly 4.6. This clearly lies in the non-linear regime. Now of course, the overdensity won't collapse to a singularity because the assumption that the peculiar velocities are negligible would break down at some point and this would mean the matter would exert a counter-acting pressure and the matter would come to an equilibrium.
+			
+			Equilibrium is reached via a process known as violent relaxation.
 	\section{Press-Schechter Formalism}
 		In the conventional (by the standards of 1973) theory of cosmological perturbations,	the generally accepted statement regarding the chronological hierarchy of scales mass aggregation is that perturbations evolved linearly and gravitational condensation is a top-down approach. That is, mass aggregates on larger length scales before gravitation took it further and made denser and denser objects: Large clouds condensed to small clouds and yet smaller ones. While this seems to explain the formation of large objects of the order of $10^{15}M_\Sun$ and not on the scales of stars.
 		
