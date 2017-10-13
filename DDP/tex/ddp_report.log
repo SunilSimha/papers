@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2017.8.24)  11 OCT 2017 22:03
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2017.8.24)  13 OCT 2017 20:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -622,25 +622,29 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [16]
 [17]
-LaTeX Font Info:    Try loading font information for U+mvs on input line 602.
+LaTeX Font Info:    Try loading font information for U+mvs on input line 621.
  (/usr/share/texlive/texmf-dist/tex/latex/marvosym/umvs.fd)
 Missing character: There is no À in font cmmi8!
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 609.
- [18]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 609.
 
-(./ddp_report.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 609.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 609.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 609.
+Underfull \vbox (badness 1622) has occurred while \output is active []
+
+ [18]
+[19] [20]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 680.
+ [21]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 680.
+ (./ddp_report.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 680.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 680.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 680.
  ) 
 Here is how much of TeX's memory you used:
- 11041 strings out of 495564
- 151027 string characters out of 6186598
- 227031 words of memory out of 5000000
- 14141 multiletter control sequences out of 15000+600000
- 26742 words of font info for 75 fonts, out of 8000000 for 9000
+ 11044 strings out of 495564
+ 151072 string characters out of 6186598
+ 227165 words of memory out of 5000000
+ 14143 multiletter control sequences out of 15000+600000
+ 27639 words of font info for 76 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  36i,12n,48p,946b,345s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ddp_report.pdf (23 pages).
+Output written on ddp_report.pdf (26 pages).

@@ -594,16 +594,87 @@ friends has provided me with an enjoyable environment to work in.
 				\delta=\delta_i\left[\frac{3}{5}\left(\frac{t}{t_i}\right)^{2/3}\right]\propto a
 			$$
 			This is exactly what one would get if one were to pop $H=2/(3t)$ in \ref{eq:growth-linear}. Thus this is consistent with the linear solution in the case where there is no peculiar velocity.
+			
+			$t/Y=2\pi$ corresponds to the case when the spherical overdensity collapses to a single point. This put in the expression for $\delta$ in the linear limit yields $\delta\approx1.69$. This defines a density scale for collapse.
+			
 		\subsection{Virialisation}
 			It can be estimated that the density contrast at turn-around would be nearly 4.6. This clearly lies in the non-linear regime. Now of course, the overdensity won't collapse to a singularity because the assumption that the peculiar velocities are negligible would break down at some point and this would mean the matter would exert a counter-acting pressure and the matter would come to an equilibrium.
 			
-			Equilibrium is reached via a process known as violent relaxation.
+			Equilibrium is reached via a process known as violent relaxation. This requires scattering of particles around small scale fluctuations and reach virial equilibrium in essentially the dynamical timescale, i.e. the time it takes for a particle to cross the spherical overdensity.
+			
+			One can compute something called the virial velocity and virial radius, which are defined through the energy equation at virial equilibrium. When the perturbation reached its maximum radius, all energy was in the form of potential energy. At virial equilibrium,
+			$$
+				\begin{aligned}
+					K&=-\mathcal{E}\\
+					 &=\frac{3GM^2}{5r_m}\\
+				   2K&=-U\\
+				   Mv_{vir}^2&=\frac{3GM}{5r_{vir}}\\
+					v_{vir}=\left(\frac{6GM}{5r_m}\right)^{1/2}&;
+					r_{vir}=r_m/2\\
+				\end{aligned}
+			$$
+			Once the system is virialised, its density doesn't change and the density contrast simply evolves due to the background expansion. The density is:
+			$$
+				\rho_{coll}\approx 2^3\rho_m=8\times5.6\rho_b(t_{m})=170\rho_b(t_{coll})\\
+			$$
 	\section{Press-Schechter Formalism}
-		In the conventional (by the standards of 1973) theory of cosmological perturbations,	the generally accepted statement regarding the chronological hierarchy of scales mass aggregation is that perturbations evolved linearly and gravitational condensation is a top-down approach. That is, mass aggregates on larger length scales before gravitation took it further and made denser and denser objects: Large clouds condensed to small clouds and yet smaller ones. While this seems to explain the formation of large objects of the order of $10^{15}M_\Sun$ and not on the scales of stars.
+		In the conventional (by the standards of 1973) theory of cosmological perturbations,	structures arose from condensations of mass from large lengthscales. That is, mass aggregates on larger length scales before gravitation took it further and made denser and denser objects: Large clouds condensed to small clouds and yet smaller ones. While this seems to explain the formation of large objects of the order of $10^{15}M_\Sun$ and not on the scales of stars.
 		
 		The way out of this proposed by Zeldovich et al. was to develop non-linear, pancake-like structures that then developed shocks and fragmented to form lumpier objects.
 		
-		Press and Schechter in their 1973 paper proposed a bottom up approach, citing the possibility of statistical fluctuations of matter density growing in size due to self gravitation. That is, starting from point masses, fluctuations could grow in size due to matter aggregating. What they obtained as a result was the distribution of objects with a mass in the range $[M, M+dM]$. 
+		Press and Schechter in their 1973 paper proposed a bottom up approach, citing the possibility of statistical fluctuations of matter density growing in size due to self gravitation. That is, starting from point masses, fluctuations could grow in size due to matter aggregating. What they obtained as a result was the distribution of objects with a mass in the range $[M, M+dM]$.
 		
-		This distribution is power law for small masses and decays exponentially after a certain mass scale. This formalism can work in complement to the standard perturbation theory.
+		We saw in the previous section that density contrast of $1.69$ or higher leads to gravitational collapse. Press-Schechter formalism predicts the fraction of the volume that has collapsed as:
+		\begin{equation}
+			f_{coll}(M(R),z)=\int_{\delta_c}^{\infty}\frac{2}{\sqrt{2\pi}\sigma(R,z)}e^{-\delta^2/2\sigma^2(R,z)}d\delta\\
+			\label{eq:Press-Schecht-fract}
+		\end{equation}
+		This requires some explanation. Firstly, one must realise not all length-scales are similar when it comes to collapse statistics. The easiest way of seeing that is by considering a density distribution and smoothing it over a window. 
+		$$
+			\delta(\mathbf{x},R)=\int \delta(\mathbf{x'})W(\mathbf{x-x'},R)d^3x
+		$$
+		Many peaks that previously appeared over the critical value will now be below it or are smoothed out to form fewer peaks. Thus it appears as if more clumps will form on the lower lengthscale but they will be less massive.
+		The process of smoothing is merely a convolution with a window function $W$. This is represented rather simply as a product in the Fourier space:
+		$$
+			\delta(\mathbf{k},R)=\delta(\mathbf{k})\tilde{W}(kR)
+		$$
+		The functional dependence of $\tilde{W}$ on $R$ is made explicit in the statement above. It appears specifically as a product $kR$.
+		In \ref{eq:Press-Schecht-fract}, $R$ is the radius of the smoothing window. $M$ is the mass enclosed within. 
+		$$
+			M=\gamma_f\bar{\rho}R^3\\
+		$$
+		Where $\bar{\rho}$ is the density averaged over the volume of the window and $\gamma_f$ is a constant that depends on the shape of the window function. $W$ is normalised such that its integral is 1 over the volume of integration. For example, $\gamma_f=4\pi/3$ for a top hat profile (constant within the spherical window but 0 outside).
+		The  variance of the Gaussian integrand is a function of this radius and also the redshift of interest. Specifically, it is defined as the variance of the smoothed linear power spectrum. 
+		$$
+			\begin{aligned}
+				\sigma^2&=\frac{1}{(2\pi)^3}\int P_{lin}(k)\tilde{W}^2(kR)d^3k\\
+				&=\frac{1}{(2\pi)^2}\int P_{lin}(k)\tilde{W}^2(kR)k^2dk
+			\end{aligned}
+		$$
+		Of course, there is implicit dependence of redshift in $P_{lin}$ and hence $\sigma$. Now one can define the window function in terms of either the radius or the mass enclosed. So in terms of mass, the variance can be written as:
+		$$
+			\sigma^2_M=\Big\langle\left(\frac{M(\mathbf{x},R)-\bar{M}}{\bar{M}}\right)^2\Big\rangle
+		$$
+		Where the $M$ is the density convolved with the window function and multiplied by the window volume. $\bar{M}$ is the aveagre of $M$ over that volume. 
+		Thus, given a particular redshift and a particular window, the fraction of volume that collapses is given by \ref{eq:Press-Schecht-fract}. Now this expression needs to be examined more carefully.
+		\begin{enumerate}
+			\item Now it is highly dubious that the distribution of inhomogeneities is Gaussian. This is simply because $\delta>-1$. Even if the mean were high and one could \emph{approximate} the distribution to be Gaussian, evolution under the influence of gravity would produce a lot of underdense regions and a significant tail of overdense regions. 
+			\item The normalisation itself is questionable because of the factor of two in the numerator.
+			\item The proposed form of $\sigma$ ignores non-linear effects. There is a huge disagreement in its value obtained from the linear power-spectrum as compared to the true non-linear one.
+		\end{enumerate}
+		With all these points to be sceptic about, it is surprising that the formalism produces great numerical results regarding clustering. The factor of two in the normalisation was introduced as a fudge factor by Press and Schechter. Without this factor, the theory would predict that only half the mass of the universe would be locked up in haloes. There were more attempts to explain theoretically as to why the P-S formalism works so well.
+		
+		Another way of expressing \ref{eq:Press-Schecht-fract} is in terms of number density of objects within a given mass range $[M,M+dM]$.
+		\begin{equation}
+			\begin{aligned}
+				\frac{dn}{dM}&=-\frac{\rho_m}{M}\frac{df_{coll}}{dM}\\
+				&=-\frac{\rho_m}{M}\frac{df_{coll}}{d\sigma}\frac{d\sigma}{dM}\\
+				&=-\frac{\rho_m}{M}\frac{d\sigma}{dM}\frac{d}{d\sigma}\int_{\delta_c}^{\infty}\frac{2}{\sqrt{2\pi}\sigma(R,z)}e^{-\delta^2/2\sigma^2(R,z)}d\delta\\
+				&=-\sqrt{\frac{2}{\pi}}\frac{\rho_m}{M}\frac{d\sigma}{dM}\frac{\delta_c}{\sigma^2}e^{\delta_c^2/2\sigma^2}\\
+				&=-\sqrt{\frac{2}{\pi}}\frac{\rho_m\delta_cR}{3M^2\sigma^2}\frac{d\sigma}{dR}e^{\delta_c^2/2\sigma^2}\\
+			\end{aligned}
+		\end{equation}
+		Here $\rho_m/M$ is the average number density of such objects. The negative signature essentially signifies the increasing rarity of more massive objects. The last equation uses the fact that $dM/dR = 3M/R$.
+		
+		Now the critical density was calculated to be 1.69 for the case of the spherically symmetric model. If one were to perform numerical simulations and find out this value by keeping it a free parameter, it would turn out ot be pretty close to 1.69.  
 \end{document}

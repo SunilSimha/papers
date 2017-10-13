@@ -20,4 +20,4 @@
 \contentsline {section}{\numberline {3.4}Non-linear perturbations: Spherical collapse}{14}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Flat background universe}{17}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}Virialisation}{18}{subsection.3.4.2}
-\contentsline {section}{\numberline {3.5}Press-Schechter Formalism}{18}{section.3.5}
+\contentsline {section}{\numberline {3.5}Press-Schechter Formalism}{19}{section.3.5}
