@@ -10,7 +10,7 @@
 \usepackage{calc}
 \usepackage{multicol} 
 \usepackage{titlesec}
-%\usepackage{showkeys}
+\usepackage{subcaption}%Need this for using the "subfigure" environment
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -128,9 +128,9 @@
 \centerline{\Large A project report}
 \vskip 8pt
 \centerline{\Large submitted in partial fulfillment 
-for the award of the degree of}
+for the award of the dual-degree of}
 \vskip 8pt
-\centerline{\Large Master of Science}
+\centerline{\Large Bachelor and Master of Science}
 \vskip 8pt
 \centerline{\Large in}
 \vskip 8pt 
@@ -211,10 +211,10 @@ friends has provided me with an enjoyable environment to work in.
 \chapter{Introduction}
 	\section{Large scale structure in cosmology?}
 	\section{Mg II absorbers along QSO sightlines}
-\chapter{Data Acquisition and Processing}
-	\section{SDSS data}
-	\section{Theoretical models for cloud distribution}
+\chapter{Absorber catalogue}
+	In this project, I have used the metal absorption catalogue produced by Zhu and Menard (2013). This catalogue has been produced using spectroscopic data from SDSS (data release 7). This catalogue includes ~40,000 absorbers between redshifts 0.4 and 2.3.
 	\section{Observed distribution}
+	\section{Empirical fits to observed distribution}
 \chapter{Cosmological perturbation theory}
 	\section{Introduction}
 		One of the successes of the general theory of relativity is the explanation of the cosmological expansion of the universe and the subsequent inference that there was the Big Bang, an event of unimaginable proportions that "started" the universe. General relativity could describe cosmological evolution if one could determine the matter distribution of the universe. In the days before computers, it was very difficult to solve the Einstein equations for a general case. This did not stop the development of solutions for certain special cases. The uniform, isotropic universe gives rise to the Friedmann-Lemaitre-Robertson-Walker (FLRW) metric and subsequently one obtains the Friedmann equations for the evolution of the universe, specifically, the scale factor $a(t)$. The first Friedmann equation is
@@ -234,7 +234,7 @@ friends has provided me with an enjoyable environment to work in.
 		The cosmic microwave background radiation (CMBR) provides very strong evidence for the big bang model. The CMBR is isotropic to very large extent and the quadrupole anisotropies have amplitudes of the order of 10 $\mu K$ as compared to the monopole term of 2.7 K. This means the universe started out with very small anisotropies and thus one can hope to explore a perturbative approach to describe structure formation in the universe.
 		
 	\section{Perturbation theory in the Newtonian Limit}
-		What one would do next would be to write down a  perturbed metric in presence of a perturbed energy density and proceed to solve Einstein's equations order by order. This process is complicated by the fact that a general coordinate transformation can make the energy density field arbitrarily large or small. One can work in a specific, presumably physically well0motivated gauge and solve for all quantities or alternatively, work in a gauge with simplified equations but make it extremely hard to interpret physically.
+		What one would do next would be to write down a  perturbed metric in presence of a perturbed energy density and proceed to solve Einstein's equations order by order. This process is complicated by the fact that a general coordinate transformation can make the energy density field arbitrarily large or small. One can work in a specific, presumably physically well-motivated gauge and solve for all quantities or alternatively, work in a gauge with simplified equations but make it extremely hard to interpret physically.
 		
 		Given these seemingly unattractive alternatives, the desperate undergraduate like myself is tempted to look for a third. Enter the world of Newtonian perturbation. One needs to keep in mind that the cosmological structures in mind (like galaxies or clusters) are well within the Hubble radius ($H^{-1} = 1/100h Mpc$) the radius of a causally connected sphere in the universe, and thus cannot be expected to be affected greatly by perturbations in lengthscales larger than the Hubble radius. It is only for these larger lengthscales that general relativistic effects become important. For within the hubble radius, one can use Newtonian perturbation theory without worrying about the concerns of the previous paragraph because the Newtonian limit defines a unique frame. This also simplifies the equations and makes it easy to study order by order.
 		
@@ -482,7 +482,7 @@ friends has provided me with an enjoyable environment to work in.
 			$$
 			\mathbf{g}=\pa_t\mathbf{v}+H\mathbf{v}=-\frac{\nabla\phi}{a}\\
 			$$
-			Now since $\mathbf{g}$ itself is curl-less splitting the equation above into the divergence and divergence-free parts, we can say:
+			Now since $\mathbf{g}$ itself is curl-less, splitting the equation above into the divergence and divergence-free parts, we can say:
 			$$
 				\pa_t(a\mathbf{F})=0
 			$$
@@ -617,64 +617,171 @@ friends has provided me with an enjoyable environment to work in.
 			$$
 				\rho_{coll}\approx 2^3\rho_m=8\times5.6\rho_b(t_{m})=170\rho_b(t_{coll})\\
 			$$
-	\section{Press-Schechter Formalism}
-		In the conventional (by the standards of 1973) theory of cosmological perturbations,	structures arose from condensations of mass from large lengthscales. That is, mass aggregates on larger length scales before gravitation took it further and made denser and denser objects: Large clouds condensed to small clouds and yet smaller ones. While this seems to explain the formation of large objects of the order of $10^{15}M_\Sun$ and not on the scales of stars.
-		
-		The way out of this proposed by Zeldovich et al. was to develop non-linear, pancake-like structures that then developed shocks and fragmented to form lumpier objects.
-		
-		Press and Schechter in their 1973 paper proposed a bottom up approach, citing the possibility of statistical fluctuations of matter density growing in size due to self gravitation. That is, starting from point masses, fluctuations could grow in size due to matter aggregating. What they obtained as a result was the distribution of objects with a mass in the range $[M, M+dM]$.
-		
-		We saw in the previous section that density contrast of $1.69$ or higher leads to gravitational collapse. Press-Schechter formalism predicts the fraction of the volume that has collapsed as:
+	\section{Halo mass function}
+		\subsection{Press-Schechter Formalism}
+			In the conventional (by the standards of 1973) theory of cosmological perturbations,	structures arose from condensations of mass from large lengthscales. That is, mass aggregates on larger length scales before gravitation took it further and made denser and denser objects: Large clouds condensed to small clouds and yet smaller ones. While this seems to explain the formation of large objects of the order of $10^{15}M_\Sun$ and not on the scales of stars.
+			
+			The way out of this proposed by Zeldovich et al. was to develop non-linear, pancake-like structures that then developed shocks and fragmented to form lumpier objects.
+			
+			Press and Schechter in their 1973 paper proposed a bottom up approach, citing the possibility of statistical fluctuations of matter density growing in size due to self gravitation. That is, starting from point masses, fluctuations could grow in size due to matter aggregating. What they obtained as a result was the distribution of objects with a mass in the range $[M, M+dM]$. This is called the \emph{halo mass function}.
+			
+			We saw in the previous section that density contrast of $1.69$ or higher leads to gravitational collapse. Press-Schechter formalism predicts the fraction of the volume that has collapsed as:
+			\begin{equation}
+				f_{coll}(M(R),z)=\int_{\delta_c}^{\infty}\frac{2}{\sqrt{2\pi}\sigma(R,z)}e^{-\delta^2/2\sigma^2(R,z)}d\delta\\
+				\label{eq:Press-Schecht-fract}
+			\end{equation}
+			This requires some explanation. Firstly, one must realise not all length-scales are similar when it comes to collapse statistics. The easiest way of seeing that is by considering a density distribution and smoothing it over a window. 
+			$$
+				\delta(\mathbf{x},R)=\int \delta(\mathbf{x'})W(\mathbf{x-x'},R)d^3x
+			$$
+			Many peaks that previously appeared over the critical value will now be below it or are smoothed out to form fewer peaks. Thus it appears as if more clumps will form on the lower lengthscale but they will be less massive.
+			The process of smoothing is merely a convolution with a window function $W$. This is represented rather simply as a product in the Fourier space:
+			$$
+				\delta(\mathbf{k},R)=\delta(\mathbf{k})\tilde{W}(kR)
+			$$
+			The functional dependence of $\tilde{W}$ on $R$ is made explicit in the statement above. It appears specifically as a product $kR$.
+			In \ref{eq:Press-Schecht-fract}, $R$ is the radius of the smoothing window. $M$ is the mass enclosed within. 
+			$$
+				M=\gamma_f\bar{\rho}R^3\\
+			$$
+			Where $\bar{\rho}$ is the density averaged over the volume of the window and $\gamma_f$ is a constant that depends on the shape of the window function. $W$ is normalised such that its integral is 1 over the volume of integration. For example, $\gamma_f=4\pi/3$ for a top hat profile (constant within the spherical window but 0 outside).
+			The  variance of the Gaussian integrand is a function of this radius and also the redshift of interest. Specifically, it is defined as the variance of the smoothed linear power spectrum. 
+			$$
+				\begin{aligned}
+					\sigma^2&=\frac{1}{(2\pi)^3}\int P_{lin}(k)\tilde{W}^2(kR)d^3k\\
+					&=\frac{1}{(2\pi)^2}\int P_{lin}(k)\tilde{W}^2(kR)k^2dk
+				\end{aligned}
+			$$
+			Of course, there is implicit dependence of redshift in $P_{lin}$ and hence $\sigma$. Now one can define the window function in terms of either the radius or the mass enclosed. So in terms of mass, the variance can be written as:
+			$$
+				\sigma^2_M=\Big\langle\left(\frac{M(\mathbf{x},R)-\bar{M}}{\bar{M}}\right)^2\Big\rangle
+			$$
+			Where the $M$ is the density convolved with the window function and multiplied by the window volume. $\bar{M}$ is the aveagre of $M$ over that volume. 
+			Thus, given a particular redshift and a particular window, the fraction of volume that collapses is given by \ref{eq:Press-Schecht-fract}. Now this expression needs to be examined more carefully.
+			\begin{enumerate}
+				\item Now it is highly dubious that the distribution of inhomogeneities is Gaussian. This is simply because $\delta>-1$. Even if the mean were high and one could \emph{approximate} the distribution to be Gaussian, evolution under the influence of gravity would produce a lot of underdense regions and a significant tail of overdense regions. 
+				\item The normalisation itself is questionable because of the factor of two in the numerator.
+				\item The proposed form of $\sigma$ ignores non-linear effects. There is a huge disagreement in its value obtained from the linear power-spectrum as compared to the true non-linear one.
+			\end{enumerate}
+			With all these points to be sceptic about, it is surprising that the formalism produces great numerical results regarding clustering. The factor of two in the normalisation was introduced as a fudge factor by Press and Schechter. Without this factor, the theory would predict that only half the mass of the universe would be locked up in haloes. There were more attempts to explain theoretically as to why the P-S formalism works so well.
+			Another way of expressing \ref{eq:Press-Schecht-fract} is in terms of number density of objects within a given mass range $[M,M+dM]$.
+			\begin{equation}
+				\begin{aligned}
+					\frac{dn}{dM}&=-\frac{\rho_m}{M}\frac{df_{coll}}{dM}\\
+					&=-\frac{\rho_m}{M}\frac{df_{coll}}{d\sigma}\frac{d\sigma}{dM}\\
+					&=-\frac{\rho_m}{M}\frac{d\sigma}{dM}\frac{d}{d\sigma}\int_{\delta_c}^{\infty}\frac{2}{\sqrt{2\pi}\sigma(R,z)}e^{-\delta^2/2\sigma^2(R,z)}d\delta\\
+					&=-\sqrt{\frac{2}{\pi}}\frac{\rho_m}{M}\frac{d\sigma}{dM}\frac{\delta_c}{\sigma^2}e^{\delta_c^2/2\sigma^2}\\
+					&=-\sqrt{\frac{2}{\pi}}\frac{\rho_m\delta_cR}{3M^2\sigma^2}\frac{d\sigma}{dR}e^{\delta_c^2/2\sigma^2}\\
+				\end{aligned}
+			\end{equation}
+			Here $\rho_m/M$ is the average number density of such objects. The negative signature essentially signifies the increasing rarity of more massive objects. The last equation uses the fact that $dM/dR = 3M/R$.
+			
+			Now the critical density was calculated to be 1.69 for the case of the spherically symmetric model. If one were to perform numerical simulations and find out this value by keeping it a free parameter, it would turn out ot be pretty close to 1.69.
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[width=0.7\textwidth]{springel.png}
+				\caption{Results of the Millenium Simulation as compared to the PS halo mass function (in units of $\rho_m/M^2$). The solid lines are the best fit from Springel et al 2005 (put citation) and the dotted lines are from PS for redshifts 0 and 10.7.}
+				\label{fig:springel}
+			\end{figure}
+	 \subsection{Beyond Press-Schechter}
+		 	While the Press-Schechter formalism successfully explained the general trend of the halo mass function, the Millenium simulation showed the flaws in this approach. PS formalism doesn't quite match the observed distribution. As seen in Fig \ref{fig:springel}
+		 	In order to account for these discrepancies, a general fitting function was proposed:
+		 	\begin{equation}
+		 		\frac{dN}{dM}=-f(\sigma)\frac{\rho_m}{M}\frac{d\log\sigma}{dM}
+		 	\end{equation}
+		 	The PS halo mass function can be accommodate into this definition rather easily. The function $f(\sigma)$ is called a fitting function because it's form is proposed to best fit data from simulations/observations.
+		 	
+		 	Sheth and Tormen in 1999 (cite) proposed a form of the fitting function which, Tinker et al. 2008 (cite) parametrised in the following fashion:
+		 	$$
+			 	f(\sigma)=A\left[\left(\frac{\sigma}{b}\right)^{-a}-1\right]e^{-c/\sigma^2}
+		 	$$
+		 	This is the form I will be using throughout this work. The values of the parameters (and their redshift evolution) are obtained from Tinker et al. 2008 for the mean halo overdensity of 200.
+\chapter{Modelling the absorber distribution}
+ 	Now that we are familiar with the theory regarding halo formation and distribution, we can go ahead with modelling the distribution of absorbers.
+ 	\section{Dark matter halo profile}
+		The first step in modelling is to first specify the distribution of dark matter in a halo. There have been numerous density profiles suggested over the years but going by Tinker and Chen 2008, I have taken the NFW (cite) profile. It is a spherically symmetric, two-parameter model whose density function goes as:
 		\begin{equation}
-			f_{coll}(M(R),z)=\int_{\delta_c}^{\infty}\frac{2}{\sqrt{2\pi}\sigma(R,z)}e^{-\delta^2/2\sigma^2(R,z)}d\delta\\
-			\label{eq:Press-Schecht-fract}
+			\rho_{NFW}(r)=\frac{\rho_s}{(r/r_s)(1+r/r_s)^2}
 		\end{equation}
-		This requires some explanation. Firstly, one must realise not all length-scales are similar when it comes to collapse statistics. The easiest way of seeing that is by considering a density distribution and smoothing it over a window. 
-		$$
-			\delta(\mathbf{x},R)=\int \delta(\mathbf{x'})W(\mathbf{x-x'},R)d^3x
-		$$
-		Many peaks that previously appeared over the critical value will now be below it or are smoothed out to form fewer peaks. Thus it appears as if more clumps will form on the lower lengthscale but they will be less massive.
-		The process of smoothing is merely a convolution with a window function $W$. This is represented rather simply as a product in the Fourier space:
-		$$
-			\delta(\mathbf{k},R)=\delta(\mathbf{k})\tilde{W}(kR)
-		$$
-		The functional dependence of $\tilde{W}$ on $R$ is made explicit in the statement above. It appears specifically as a product $kR$.
-		In \ref{eq:Press-Schecht-fract}, $R$ is the radius of the smoothing window. $M$ is the mass enclosed within. 
-		$$
-			M=\gamma_f\bar{\rho}R^3\\
-		$$
-		Where $\bar{\rho}$ is the density averaged over the volume of the window and $\gamma_f$ is a constant that depends on the shape of the window function. $W$ is normalised such that its integral is 1 over the volume of integration. For example, $\gamma_f=4\pi/3$ for a top hat profile (constant within the spherical window but 0 outside).
-		The  variance of the Gaussian integrand is a function of this radius and also the redshift of interest. Specifically, it is defined as the variance of the smoothed linear power spectrum. 
-		$$
-			\begin{aligned}
-				\sigma^2&=\frac{1}{(2\pi)^3}\int P_{lin}(k)\tilde{W}^2(kR)d^3k\\
-				&=\frac{1}{(2\pi)^2}\int P_{lin}(k)\tilde{W}^2(kR)k^2dk
-			\end{aligned}
-		$$
-		Of course, there is implicit dependence of redshift in $P_{lin}$ and hence $\sigma$. Now one can define the window function in terms of either the radius or the mass enclosed. So in terms of mass, the variance can be written as:
-		$$
-			\sigma^2_M=\Big\langle\left(\frac{M(\mathbf{x},R)-\bar{M}}{\bar{M}}\right)^2\Big\rangle
-		$$
-		Where the $M$ is the density convolved with the window function and multiplied by the window volume. $\bar{M}$ is the aveagre of $M$ over that volume. 
-		Thus, given a particular redshift and a particular window, the fraction of volume that collapses is given by \ref{eq:Press-Schecht-fract}. Now this expression needs to be examined more carefully.
-		\begin{enumerate}
-			\item Now it is highly dubious that the distribution of inhomogeneities is Gaussian. This is simply because $\delta>-1$. Even if the mean were high and one could \emph{approximate} the distribution to be Gaussian, evolution under the influence of gravity would produce a lot of underdense regions and a significant tail of overdense regions. 
-			\item The normalisation itself is questionable because of the factor of two in the numerator.
-			\item The proposed form of $\sigma$ ignores non-linear effects. There is a huge disagreement in its value obtained from the linear power-spectrum as compared to the true non-linear one.
-		\end{enumerate}
-		With all these points to be sceptic about, it is surprising that the formalism produces great numerical results regarding clustering. The factor of two in the normalisation was introduced as a fudge factor by Press and Schechter. Without this factor, the theory would predict that only half the mass of the universe would be locked up in haloes. There were more attempts to explain theoretically as to why the P-S formalism works so well.
-		
-		Another way of expressing \ref{eq:Press-Schecht-fract} is in terms of number density of objects within a given mass range $[M,M+dM]$.
-		\begin{equation}
-			\begin{aligned}
-				\frac{dn}{dM}&=-\frac{\rho_m}{M}\frac{df_{coll}}{dM}\\
-				&=-\frac{\rho_m}{M}\frac{df_{coll}}{d\sigma}\frac{d\sigma}{dM}\\
-				&=-\frac{\rho_m}{M}\frac{d\sigma}{dM}\frac{d}{d\sigma}\int_{\delta_c}^{\infty}\frac{2}{\sqrt{2\pi}\sigma(R,z)}e^{-\delta^2/2\sigma^2(R,z)}d\delta\\
-				&=-\sqrt{\frac{2}{\pi}}\frac{\rho_m}{M}\frac{d\sigma}{dM}\frac{\delta_c}{\sigma^2}e^{\delta_c^2/2\sigma^2}\\
-				&=-\sqrt{\frac{2}{\pi}}\frac{\rho_m\delta_cR}{3M^2\sigma^2}\frac{d\sigma}{dR}e^{\delta_c^2/2\sigma^2}\\
-			\end{aligned}
-		\end{equation}
-		Here $\rho_m/M$ is the average number density of such objects. The negative signature essentially signifies the increasing rarity of more massive objects. The last equation uses the fact that $dM/dR = 3M/R$.
-		
-		Now the critical density was calculated to be 1.69 for the case of the spherically symmetric model. If one were to perform numerical simulations and find out this value by keeping it a free parameter, it would turn out ot be pretty close to 1.69.  
+	 	There is a scale density $\rho_s$ and an inner radius $r_s$ that paramterise the density profile. Given a halo is defined to have a mean overdensity of $\Delta$ (usually ~200), the mass enclosed is:
+	 	$$
+	 	M=\Delta\rho_b\frac{4}{3}\pi r_{\Delta}^3
+	 	$$
+	 	$\rho_s$ can be expressed in terms of $r_s$ because of the definition of $r_{\Delta}$:
+	 	$$
+	 	\begin{aligned}
+	 	\bar{\rho}&=\Delta\rho_b=\frac{3}{4\pi r_\Delta^3}\int_0^{r_\Delta}\rho(r)4\pi r^2dr
+	 	=3\rho_s\int_0^1\frac{dxx^2}{cx(1+cx)^2}\\
+	 	\rho_s&=\frac{\Delta}{3}\rho_b\frac{c^3}{\ln(1+c)-c/(1+c)}
+	 	\end{aligned}
+	 	$$
+	 	Where $x=r/r_{\Delta}$ and $c=r_\Delta/r_s$ (the \emph{concentration parameter}). The values of $c$ are obtained by fitting simulated halos with the NFW profile. I am using the results from Dutton-Machio 2014 (cite) for the concentration-mass relation.
+ 	\section{Absorber distribution model}
+	 	Given a halo, one needs to populate it with absorbers. This chapter has been paraphrased from Tinker and Chen 2008.
+	 	\subsection{Model description}
+		 	Gas is distributed in an NFW halo in a spherically symmetric fashion
+		 	\begin{figure}[h!]
+		 		\centering
+		 		\includegraphics[width=0.65\textwidth]{halo-model.png}
+		 		\caption{Distribution of gas in a halo according to the classical model proposed by Tinker and Chen 2008. There is a central gal halo in a dark matter halo. The gas halo is made of multiple clumps of gas. These are spacially distributed in a specific way and the dark matter halo has a1}
+		 		\label{fig:halo-model}
+		 	\end{figure}
+		 	The gas has a finite extent $R_g$ and is distributed in clumps. Each clump has a characteristic absorption strength and cross section. The number density of these absorbers is purely a function of radius and is given by:
+		 	$$
+		 	\rho_g(r)=f_gG_0/(r^2+a_h^2)
+		 	$$
+		 	Where $f_g$ is the gas fraction, $a_h$ is the core radius and $G_0$ is a normalisation constant that is defined as:
+		 	$$
+		 	G_0=\frac{M(<R_g)/4\pi}{R_g-a_h\arctan(R_g/a_h)}
+		 	$$
+		 	Where $M(<R_g)$ is the mass of dark matter enclosed in the gas halo. Integrating $\rho_g$ over the volume of the gas halo gives the gas mass as $f_gM(<R_g)$. Initially, the gas radius is assumed to depend on mass as $80(M/10^{12}h^{-1}M_\odot)h^{-1}kPc$ as was done by Tinker and Chen.
+	 	\subsection{Probability of absorption}
+		 	For an absorption to be observed, there needs to be a line of sight that passes through a gas halo. The strength of absorption depends on the distance that light travels through a halo of given mass (fig \ref{fig:absorb-strength}). One integrates the gas density along the line of sight assuming each cloud of mass $M_{cl}$ contributes a certain absorption cross section $\sigma_{cl}$ and produces a width of $W_0$.
+		 	$$
+		 	W_r(s|M)=W_0\left[\frac{2\sigma_{cl}}{M_{cl}}\int_0^{\sqrt{R_g^2-s^2}}\rho_gdl\right]=A_w(M)\frac{2G_0}{\sqrt{s^2+a_h^2}}\arctan\sqrt{\frac{R_g^2-s^2}{s^2+a_h^2}}
+		 	$$
+		 	Where $A_w=W_0f_g\sigma_{cl}/M_{cl}$ clumps all the degenerate quantities into a single model parameter.
+		 	\begin{figure}[h!]
+		 		\centering
+		 		\includegraphics[width=0.65\textwidth]{halo-absorb.png}
+		 		\caption{Absorption strength depends on the line of sight through a given halo (of a certain mass at a specific redshift). The rest equivalent width increases if the line of sight passes close to the centre as opposed to the fringe of the gas halo. Here the inner (orange, solid) circle represents the gas halo encapsulated by a dark matter halo (blue, dotted). To the right, are line profiles that one might obtain from the two lines of sight (dashed black arrows). Notice the one passing through the centre seems saturated.}
+		 		\label{fig:absorb-strength}
+		 	\end{figure}
+		 	First, we begin with the probability of a line of sight passing through the gas halo at a radius r. Since the projected position of the LoS on a halo disk is uniformly distributed, this is simply:
+		 	$$
+		 	P(s|M)=
+		 	\begin{cases}
+			 	2s/R_g&\text{if } s\leq R_g\\
+			 	0&\text{if } s>R_g\\
+		 	\end{cases}
+		 	$$
+		 	Now we need to determine the probability of a certain rest equivalent width $W_r$ of absorption occurring from a halo of given mass. This simply depends on getting a certain combination of line of sight and a halo of required mass. Not all masses of halos contribute to absorption the same way. It depends on the covering fraction of the gas and also the amount of gas hosted by a halo. These being degenerate, they will be clubbed together in one parameter $\kappa_g$. Thus:
+		 	$$
+		 	\begin{aligned}
+			 	P(W_r|M)dW_r&=\kappa_g(M)P(s|M)ds\\
+				\therefore P(W_r|M)&=\kappa_g(M)P(s|M)\frac{ds}{dW_r}\\
+				&=\kappa_g\frac{2s}{R_g^2}\frac{ds}{dW_r}\\
+		 	\end{aligned}
+		 	$$
+		 	$s(W_r|M)$ is obtained by numerically inverting the relation for $W_r$. The exact form of $\kappa_g$ is a unknown and Tinker and Chen use a non-parametric curve. They specify its value for four masses and linearly interpolate in logarithmic space (i.e. it is a piecewise power-law). See fig. \ref{fig:kappa_g}
+		 	\begin{figure}
+		 		\centering
+		 		\includegraphics[width=0.9\textwidth]{kappa_g.png}
+		 		\caption{The form of $\kappa_g$ chosen by Tinker and Chen}
+		 		\label{fig:kappa_g}
+		 	\end{figure}
+		 	This essentially conveys the fact that most halos associated with Mg II absorption are in the $10^{11}-10^{13}h^{-1}M_\odot$ range.
+	 	\subsection{Frequency distribution function}
+		 	The number density of absorbers per unit rest equivalent width range and unit comoving path length is the integral over halo mass of the product of the halo mass function weighted by cross-section and probability of detecting an absorber with a certain rest equivalent width from a halo of given mass. i.e.
+		 	\begin{equation}
+		 	\begin{aligned}
+			 	f(W_r)=\frac{d^2N}{dW_rdl}&=\int dM\frac{dn}{dM}\sigma_g(M)P(W_r|M)\\
+			 	&=\int dM\frac{dN}{dM}\pi R_g(M)^2P(W_r|M)\\
+		 	\end{aligned}
+		 	\end{equation}
+		 	\subsubsection{Redshift evolution absoprtion strength and gas radius}
+		 	Note to Prof. Sriram: I haven't started writing this yet because I'm working on this as of now. We require modification to the original model proposed in the paper and as of now we aren't clear as to whether the original model by itself can explain observations up to z~2.5.
+ 	\chapter{Conclusions}
+	 	
+			 	
 \end{document}

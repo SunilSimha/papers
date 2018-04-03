@@ -1,0 +1,9 @@
+\beamer@endinputifotherversion {3.36pt}
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Mg II absorbers along QSO sightlines}{3}{0}{1}
+\beamer@sectionintoc {2}{Theory}{5}{0}{2}
+\beamer@subsectionintoc {2}{1}{Cosmological perturbation theory}{5}{0}{2}
+\beamer@subsectionintoc {2}{2}{Non-linear collapse}{8}{0}{2}
+\beamer@subsectionintoc {2}{3}{Press-Schechter formalism}{10}{0}{2}
+\beamer@sectionintoc {3}{Data Analysis}{11}{0}{3}
+\beamer@subsectionintoc {3}{1}{Observed clustering}{11}{0}{3}

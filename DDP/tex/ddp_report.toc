@@ -1,10 +1,9 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Large scale structure in cosmology?}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Mg II absorbers along QSO sightlines}{1}{section.1.2}
-\contentsline {chapter}{\numberline {2}Data Acquisition and Processing}{3}{chapter.2}
-\contentsline {section}{\numberline {2.1}SDSS data}{3}{section.2.1}
-\contentsline {section}{\numberline {2.2}Theoretical models for cloud distribution}{3}{section.2.2}
-\contentsline {section}{\numberline {2.3}Observed distribution}{3}{section.2.3}
+\contentsline {chapter}{\numberline {2}Absorber catalogue}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Observed distribution}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}Empirical fits to observed distribution}{3}{section.2.2}
 \contentsline {chapter}{\numberline {3}Cosmological perturbation theory}{5}{chapter.3}
 \contentsline {section}{\numberline {3.1}Introduction}{5}{section.3.1}
 \contentsline {section}{\numberline {3.2}Perturbation theory in the Newtonian Limit}{6}{section.3.2}
@@ -20,4 +19,14 @@
 \contentsline {section}{\numberline {3.4}Non-linear perturbations: Spherical collapse}{14}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Flat background universe}{17}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}Virialisation}{18}{subsection.3.4.2}
-\contentsline {section}{\numberline {3.5}Press-Schechter Formalism}{19}{section.3.5}
+\contentsline {section}{\numberline {3.5}Halo mass function}{19}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Press-Schechter Formalism}{19}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Beyond Press-Schechter}{21}{subsection.3.5.2}
+\contentsline {chapter}{\numberline {4}Modelling the absorber distribution}{23}{chapter.4}
+\contentsline {section}{\numberline {4.1}Dark matter halo profile}{23}{section.4.1}
+\contentsline {section}{\numberline {4.2}Absorber distribution model}{24}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Model description}{24}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Probability of absorption}{25}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Frequency distribution function}{26}{subsection.4.2.3}
+\contentsline {subsubsection}{Redshift evolution absoprtion strength and gas radius}{28}{subsubsection*.9}
+\contentsline {chapter}{\numberline {5}Conclusions}{29}{chapter.5}
